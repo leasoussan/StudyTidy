@@ -1,23 +1,27 @@
 function addUser(event){
-  event.preventDefault()
+
         
   let info = document.getElementById("myform")
+  let user = document.createElement("div")
   let username = document.getElementById("username") 
   let password = document.getElementById("password")
   let programm = document.getElementById("weeks")  
 
-  addUser.username = username;
-  addUser.password = password;
-  addUser.programm = programm;
-    
+  // addUser.username = username;
+  // addUser.password = password;
+  // addUser.programm = programm;
+  
+  user.appendChild(username)
+  user.appendChild(password)
+  user.appendChild(programm)
 }
 
 
 
 
-// let addUserbtn = document.querySelector("button")
+let addUserbtn = document.querySelector("button")
 
-// addUserbtn.addEventListener("click", addUser)
+addUserbtn.addEventListener("click", addUser)
 
 
 // Initialize an object with properties and methods
