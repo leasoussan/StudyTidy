@@ -97,7 +97,7 @@
 
 .exercise {
     margin-left: 10px;
-    border: solid black 1px;
+    border: solid red 3px;
     padding: 3px;
 }
 
@@ -119,4 +119,9 @@
     width: 30%;
     border: solid black 1px;
     background-color: white;
+}
+
+.over {
+    border: 5px;
+    padding: 5px;
 }
