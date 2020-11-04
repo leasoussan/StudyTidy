@@ -1,14 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyTidy</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-    
+
+    <div class="page-space">
+        <section class="navbar">Navbar</section>
+        <section class="progress-bar">Progress Bar</section>
+        <section class="main-page">
+            <section class="main-page-left-bar">
+                <div class="info-collection">
+                    <div class="info-collection-left-side">
+                        <div class="date-input">
+                            <input id="date-selection" type="date">
+                        </div>
+                        <div class="check-box-input">
+                            <div class="checkbox" id="checkbox-container-1">
+                                <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1">
+                                <label for="checkbox1">checkbox1 text</label><br>
+                            </div>
+                            <div class="checkbox" id="checkbox-container-2">
+                                <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2">
+                                <label for="checkbox2">checkbox2 text</label><br>
+                            </div>
+                            <div class="checkbox" id="checkbox-container-3">
+                                <input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3">
+                                <label for="checkbox3">checkbox3 text</label><br>
+                            </div>
+                            <div class="checkbox" id="checkbox-container-4">
+                                <input type="checkbox" id="checkbox4" name="checkbox4" value="checkbox4">
+                                <label for="checkbox4">checkbox4 text</label><br>
+                            </div>
+                            <div class="checkbox" id="checkbox-container-5">
+                                <input type="checkbox" id="checkbox5" name="checkbox5" value="checkbox5">
+                                <label for="checkbox1">checkbox5 text</label><br>
+                            </div>
+                        </div>
+                        <div class="day-link-input">
+                            <input type="url" id="url-input" name="url-input" value="url-input">
+                            <label for="url-input">url-input text</label><br>
+                        </div>
+                        <div class="submit-input-button-container">
+                            <button class="submit-input-button">Submit</button>
+                        </div>
+
+
+                    </div>
+                    <div class="info-collection-notes">
+                        <input id="notes-input" type="text">
+                    </div>
+
+                </div>
+                <div class="drop-box-container">
+                    <div class="drop-box" id="drop-box-1">Box 1</div>
+                    <div class="drop-box" id="drop-box-2">Box 2</div>
+                    <div class="drop-box" id="drop-box-3">Box 3</div>
+                </div>
+            </section>
+            <section class="main-page-side-bar">
+                <div class="loging-bar">
+                    <div class="current-user">
+                        <h3 class="username">
+                            Denis
+                        </h3>
+                    </div>
+                    <div class="switch-user-button">
+                        <button>Switch Account</button>
+                    </div>
+                </div>
+                <div class="weeks-container">
+                    <div class="week-container">
+                        <div class="week-header-container">
+                            <h2 class="week">Week 1</h2>
+                        </div>
+                        <div class="topic-container">
+                            <div class="topic-header-container">
+                                <h3 class="topic">Day 1</h3>
+                            </div>
+                            <div class="exercises-container">
+                                <p class="exercise default-exercise default-exercise-practice">Practice</p>
+                                <p class="exercise default-exercise default-exercise-xp">XP</p>
+                                <p class="exercise default-exercise default-exercise-xp-gold">XP Gold</p>
+                                <p class="exercise default-exercise default-exercise-xp-ninja">XP Ninja</p>
+                                <p class="exercise custom-exercise">Mini-project 1</p>
+                                <p class="exercise custom-exercise">Mini-project 2</p>
+                            </div>
+
+                        </div>
+                        <div class="topic-container">
+                            <div class="topic-header-container">
+                                <h3 class="topic">Day 2</h3>
+                            </div>
+                            <div class="exercises-container">
+                                <p class="exercise default-exercise default-exercise-practice">Practice</p>
+                                <p class="exercise default-exercise default-exercise-xp">XP</p>
+                                <p class="exercise default-exercise default-exercise-xp-gold">XP Gold</p>
+                                <p class="exercise default-exercise default-exercise-xp-ninja">XP Ninja</p>
+                                <p class="exercise custom-exercise">Mini-project 1</p>
+                                <p class="exercise custom-exercise">Mini-project 2</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="week-container">
+                        <div class="week-header-container">
+                            <h2 class="week">Week 2</h2>
+                        </div>
+                        <div class="topic-container">
+                            <div class="topic-header-container">
+                                <h3 class="topic">CSS Basics</h3>
+                            </div>
+                            <div class="exercises-container">
+                                <p class="exercise default-exercise default-exercise-practice">Practice</p>
+                                <p class="exercise default-exercise default-exercise-xp">XP</p>
+                                <p class="exercise default-exercise default-exercise-xp-gold">XP Gold</p>
+                                <p class="exercise default-exercise default-exercise-xp-ninja">XP Ninja</p>
+                                <p class="exercise custom-exercise">Mini-project 1</p>
+                                <p class="exercise custom-exercise">Mini-project 2</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </section>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
