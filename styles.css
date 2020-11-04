@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: row;
     height: 95%;
+    max-height: 800px;
 }
 
 .main-page-left-bar {
@@ -60,7 +61,6 @@
 .drop-box {
     width: 32%;
     height: 50px;
-    border: black solid 1px;
     margin: 5px;
 }
 
@@ -84,6 +84,11 @@
 
 .switch-user-button {
     margin: 2px;
+}
+
+.weeks-container {
+    overflow: scroll;
+    max-height: 700px;
 }
 
 .week-container {
@@ -124,4 +129,10 @@
 .over {
     border: 5px;
     padding: 5px;
+}
+
+.progress-bar-element {
+    height: 95%;
+    border: solid black 0.2px;
+    background-color: lightgrey;
 }
