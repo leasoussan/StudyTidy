@@ -1,52 +1,52 @@
 let topicsObject = {
-    "weekContainer-1": {
-        "topicContainer-1-1": {
-            "topicName": "HTML Basics",
-            "exercises": {
-                "Practice": "green",
-                "XP": "red",
-                "XP Gold": "yellow",
-                "XP Ninja": "orange",
-                "Mini-project": "green"
+    weekContainer_1: {
+        topicContainer_1_1: {
+            topicName: "HTML Basics",
+            exercises: {
+                Practice: "green",
+                XP: "red",
+                XP_Gold: "yellow",
+                XP_Ninja: "orange",
+                Mini_project: "green"
             },
-            "notes": "some notes",
-            "url": "www.google.com"
+            notes: "some notes",
+            url: "www.google.com"
         },
-        "topicContainer-1-2": {
-            "topicName": "CSS Basics",
-            "exercises": {
-                "Practice": "red",
-                "XP": "green",
-                "Mini-project": "yellow"
+        topicContainer_1_2: {
+            topicName: "CSS Basics",
+            exercises: {
+                Practice: "red",
+                XP: "green",
+                Mini_project: "yellow"
             },
-            "notes": "some notes",
-            "url": "www.google.com"
+            notes: "some notes",
+            url: "www.google.com"
         }
     },
-    "weekContainer-2": {
-        "topicContainer-2-1": {
-            "topicName": "JavaScript Basics",
-            "exercises": {
-                "Practice": "red",
-                "XP": "green",
-                "XP Gold": "yellow",
-                "XP Ninja": "orange",
-                "Mini-project": "red"
+    weekContainer_2: {
+        topicContainer_2_1: {
+            topicName: "JavaScript Basics",
+            exercises: {
+                Practice: "red",
+                XP: "green",
+                XP_Gold: "yellow",
+                XP_Ninja: "orange",
+                Mini_project: "red"
             },
-            "notes": "some notes",
-            "url": "www.google.com"
+            notes: "some notes",
+            url: "www.google.com"
         },
-        "topicContainer-2-2": {
-            "topicName": "JavaScript Basics",
-            "exercises": {
-                "Practice": "red",
-                "XP": "green",
-                "XP Gold": "yellow",
-                "XP Ninja": "orange",
-                "Mini-project": "red"
+        topicContainer_2_2: {
+            topicName: "Advanced JavaScript",
+            exercises: {
+                Practice: "red",
+                XP: "green",
+                XP_Gold: "yellow",
+                XP_Ninja: "orange",
+                Mini_project: "red"
             },
-            "notes": "some notes",
-            "url": "www.google.com"
+            notes: "some notes",
+            url: "www.google.com"
         }
     }
 }
@@ -60,28 +60,39 @@ function populateExistingTopics(topicsObject) {
     for (let i = 0; i < weekContainers.length; i++) {
         let weekContainer = weekContainers[i];
         let weekContainerID = weekContainer.id;
-        console.log(weekContainerID);
 
         // locating the topics within the weekContainer (5 topics)
         let topicContainers = weekContainer.getElementsByClassName("topicContainer");
 
         // loop through topicContainers
         for (let i = 0; i < topicContainers.length; i++) {
+            // locate the current topic container and ID
             let currentTopicContainer = topicContainers[i];
             let currentTopicContainerID = currentTopicContainer.id;
-            console.log(currentTopicContainerID);
+            // if exists find the current topic container in the data object
             try {
-                let historyName = topicsObject[weekContainerID][currentTopicContainerID]["topicName"];
-                let historyExercises = topicsObject[weekContainerID][currentTopicContainerID]["exercises"];
-                console.log(historyName);
-                console.log(historyExercises);
+                let topicName = topicsObject[weekContainerID][currentTopicContainerID]["topicName"];
+                let exercises = topicsObject[weekContainerID][currentTopicContainerID]["exercises"];
+
+                // topic text
+                let topicHeader = currentTopicContainer.getElementsByClassName("topicHeader")[0];
+                topicHeader.innerText = topicName;
+                // loop through exercises and populate them
+                let pElements = currentTopicContainer.getElementsByTagName("p");
+                for (let i = 0; i < pElements.length; i++) {
+                    let current_pEelement = pElements[i];
+                    let current_exerciseName = exerciseNames[i];
+                    let borderColor = exercises[current_exerciseName];
+                    if (typeof(borderColor) != "undefined") {
+                        // setting exercise border style
+                        current_pEelement.style.border = `solid 3px ${borderColor}`;
+                        // setting exercise name
+                        current_pEelement.innerText = current_exerciseName;
+                        // setting exercise class to active
+                        current_pEelement.classList.add("active");
+                    }
+                }
             } catch {}
-
-
-            //
-
-
-
         }
     }
 }

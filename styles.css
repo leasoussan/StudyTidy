@@ -100,7 +100,7 @@
     max-height: 700px;
 }
 
-.week-container {
+.weekContainer {
     border: solid black 1px;
     padding: 5px;
 }
@@ -109,9 +109,8 @@
     margin-left: 10px;
 }
 
-.exercise {
+.active {
     margin-left: 10px;
-    border: solid red 3px;
     padding: 3px;
 }
 
