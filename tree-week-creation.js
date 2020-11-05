@@ -4,6 +4,13 @@
 // It gets the data from an object that also has border colors (super important)
 
 
+
+//getting the number of week from the Database:
+
+// let weeks = usersDatabase[user]["weeks"];
+
+
+
 function createWeeks(weeks) {
     let weeksContainer = document.getElementById("weeks-container");
     // create week continers for however many weeks the user has

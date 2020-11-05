@@ -1,4 +1,4 @@
-let user = document.getElementById("username").innerText;
+// let user = document.getElementById("username").innerText;
 
 let topicsObject = usersDatabase[user]["data"];
 
@@ -23,10 +23,12 @@ function populateExistingTopics(topicsObject) {
             try {
                 let topicName = topicsObject[weekContainerID][currentTopicContainerID]["topicName"];
                 let exercises = topicsObject[weekContainerID][currentTopicContainerID]["exercises"];
+                
 
                 // topic text
                 let topicHeader = currentTopicContainer.getElementsByClassName("topicHeader")[0];
-                topicHeader.innerText = topicName;
+               
+                topicHeader.innerText = topicName; 
                 // loop through exercises and populate them
                 let pElements = currentTopicContainer.getElementsByTagName("p");
                 for (let i = 0; i < pElements.length; i++) {
