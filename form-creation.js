@@ -75,13 +75,13 @@ function createForm() {
         let checkboxInput = document.createElement("input");
         checkboxInput.setAttribute("type", "checkbox");
         checkboxInput.setAttribute("class", "checkboxInput");
-        checkboxInput.setAttribute("id", `checkboxInput-${i+1}`);
+        checkboxInput.setAttribute("id", `checkboxInput_${i+1}`);
         checkboxAndLabelDiv.appendChild(checkboxInput);
         // creating a checkbox label element
         let checkboxLabel = document.createElement("label");
         checkboxLabel.innerText = exerciseNames[i];
         checkboxLabel.setAttribute("class", "checkboxLabel");
-        checkboxLabel.setAttribute("id", `checkboxLabel-${i+1}`);
+        checkboxLabel.setAttribute("id", `checkboxLabel_${i+1}`);
         checkboxAndLabelDiv.appendChild(checkboxLabel);
 
         // appending checkbox - label pair to parent
