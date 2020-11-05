@@ -228,5 +228,3 @@ let usersDatabase = {
         }
     }
 }
-
-

@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>
-
+        StudyTidy
     </title>
     <link rel="stylesheet" href="styles.css">
 
@@ -26,12 +27,15 @@
                     <div class="drop-box" id="drop-box-4" style="background-color: red; border: 2px solid rgb(128, 0, 0)">Box 4</div>
 
                 </div>
+                <div class="notes_section_div">
+                    <textarea class="notes_section"></textarea>
+                </div>
             </section>
             <section class="main-page-side-bar">
                 <div class="loging-bar">
                     <div class="current-user">
                         <h3 class="username" id="username">
-                        
+
                         </h3>
                     </div>
                     <div class="switch-user-button">
@@ -44,9 +48,7 @@
                     </button>
                 </div>
                 <div class="weeks-container" id="weeks-container">
-
                 </div>
-
             </section>
         </section>
 
@@ -69,14 +71,11 @@
         // temporary; make this function activate on load or again if user is changed
         createWeeks(weeks);
     </script>
-    
+
     <script src="tree-topic-population.js"></script>
-<<<<<<< HEAD
     <script src="update_user_database_functionality.js"></script>
     <script src="switchuser.js"></script>
-    
-=======
->>>>>>> update-user-database-functionality
+
 </body>
 
 </html>
