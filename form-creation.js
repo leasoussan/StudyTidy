@@ -1,5 +1,3 @@
-let startMyDayObject = {};
-
 function createForm() {
     // parent to which the form is appended
     let parent = document.getElementsByClassName("main-page-left-bar")[0];
@@ -16,17 +14,39 @@ function createForm() {
 
 
 
-    // DATE INPUT
-    //creating a div with date input
-    let dateInputDiv = document.createElement("div");
-    dateInputDiv.setAttribute("id", "dateInputDiv");
 
-    let dateInput = document.createElement("input");
-    dateInput.setAttribute("type", "date");
-    dateInput.setAttribute("class", "dateInput");
-    dateInput.setAttribute("id", "dateInput-start");
+    // WEEK INPUT
+    //creating a div with week input
+    let weekInputDiv = document.createElement("div");
+    weekInputDiv.setAttribute("id", "weekInputDiv");
 
-    dateInputDiv.appendChild(dateInput);
+    let weekInput = document.createElement("select");
+    weekInput.setAttribute("class", "weekInput");
+    weekInput.setAttribute("id", "weekInput-start");
+    // creating options
+    for (let i = 0; i < weeks; i++) {
+        let option = document.createElement("option");
+        option.setAttribute("value", `Week_${i+1}`);
+        option.innerText = `Week ${i+1}`;
+        weekInput.appendChild(option);
+    }
+    weekInputDiv.appendChild(weekInput);
+
+    // WEEKDAY INPUT
+    //creating a div with weekday input
+    let weekdayInputDiv = document.createElement("div");
+    weekdayInputDiv.setAttribute("id", "weekdayInputDiv");
+
+    let weekdayInput = document.createElement("select");
+    weekdayInput.setAttribute("class", "weekdayInput");
+    weekdayInput.setAttribute("id", "weekdayInput-start");
+    for (let i = 0; i < 5; i++) {
+        let option = document.createElement("option");
+        option.setAttribute("value", `Day_${i+1}`);
+        option.innerText = `Day ${i+1}`;
+        weekdayInput.appendChild(option);
+    }
+    weekdayInputDiv.appendChild(weekdayInput);
 
 
 
@@ -145,7 +165,8 @@ function createForm() {
 
 
     // APPEND dateInputDiv, subjectInputDiv, checkboxesInputSection, submitButton to inputCollectionForm
-    inputCollectionForm.appendChild(dateInputDiv);
+    inputCollectionForm.appendChild(weekInputDiv);
+    inputCollectionForm.appendChild(weekdayInputDiv);
     inputCollectionForm.appendChild(subjectInputDiv);
     inputCollectionForm.appendChild(checkboxesInputSection);
     inputCollectionForm.appendChild(urlInputDiv);
@@ -159,46 +180,44 @@ function createForm() {
     // FUNCTIONALITY TO COLLECT INPUT
     let startMyDayButton = document.getElementById("startingInputSubmitButton")
 
-    function collectStartingInput(event) {
+    function insertTopicInputIntoTree(event) {
         event.preventDefault();
 
-        // collect username
-        let username = document.getElementById("username");
-        startMyDayObject["username"] = username;
-
-        // collect date input
-        let dateInput = document.getElementById("dateInput-start")
-        let dateInputValue = dateInput.value;
-        startMyDayObject["date"] = dateInputValue;
-
-        // collect subject input
-        let subjectInput = document.getElementById("subjectInput-start");
-        let subjectInputValue = subjectInput.value;
-        startMyDayObject["subjectInput"] = subjectInputValue;
-
-        // collect checkboxes input
+        let username = document.getElementById("username").innerText;
+        let weekInput = document.getElementById("weekInput-start").value
+        let weekdayInput = document.getElementById("weekdayInput-start").value
+        let subjectInput = document.getElementById("subjectInput-start").value;
         let checkboxes = document.getElementsByClassName("checkboxInput");
         let checkboxValues = [];
         for (checkbox of checkboxes) {
             checkboxValues.push(checkbox.checked);
         }
-        startMyDayObject["checkboxValues"] = checkboxValues;
+        let urlInput = document.getElementById("urlInput").value;
+        let notesInput = document.getElementById("notesInput").value;
 
-        // collect URL input
-        let urlInput = document.getElementById("urlInput");
-        let urlInputValue = urlInput.value;
-        startMyDayObject["urlInputValue"] = urlInputValue;
-
-        // collect notes input
-        let notesInput = document.getElementById("notesInput");
-        let notesInputValue = notesInput.value;
-        startMyDayObject["notesInputValue"] = notesInputValue;
-
-        console.log(startMyDayObject);
         parent.removeChild(inputCollectionForm);
+
+
+        // INSERT NEW INFORMATION
+        // Inserting the new information into the tree and the usersDatabase js
+        let date = startMyDayObject["date"];
+        let subjectInput = startMyDayObject["subjectInput"];
+        let urlInputValue = startMyDayObject["urlInputValue"];
+
+        function updateTopicTree() {
+            let dataObject = usersDatabase[username]["data"];
+            console.log(dataObject)
+        }
+
+        updateTopicTree()
+
+
+
+
+
     }
 
-    startMyDayButton.addEventListener("click", collectStartingInput);
+    startMyDayButton.addEventListener("click", insertTopicInputIntoTree);
 }
 
 

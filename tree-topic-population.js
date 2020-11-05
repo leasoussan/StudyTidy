@@ -1,56 +1,6 @@
-let topicsObject = {
-    weekContainer_1: {
-        topicContainer_1_1: {
-            topicName: "HTML Basics",
-            exercises: {
-                Practice: "green",
-                XP: "red",
-                XP_Gold: "yellow",
-                XP_Ninja: "orange",
-                Mini_project: "green"
-            },
-            notes: "some notes",
-            url: "www.google.com"
-        },
-        topicContainer_1_2: {
-            topicName: "CSS Basics",
-            exercises: {
-                Practice: "red",
-                XP: "green",
-                Mini_project: "yellow"
-            },
-            notes: "some notes",
-            url: "www.google.com"
-        }
-    },
-    weekContainer_2: {
-        topicContainer_2_1: {
-            topicName: "JavaScript Basics",
-            exercises: {
-                Practice: "red",
-                XP: "green",
-                XP_Gold: "yellow",
-                XP_Ninja: "orange",
-                Mini_project: "red"
-            },
-            notes: "some notes",
-            url: "www.google.com"
-        },
-        topicContainer_2_2: {
-            topicName: "Advanced JavaScript",
-            exercises: {
-                Practice: "red",
-                XP: "green",
-                XP_Gold: "yellow",
-                XP_Ninja: "orange",
-                Mini_project: "red"
-            },
-            notes: "some notes",
-            url: "www.google.com"
-        }
-    }
-}
+let user = document.getElementById("username").innerText;
 
+let topicsObject = usersDatabase[user]["data"];
 
 
 function populateExistingTopics(topicsObject) {
