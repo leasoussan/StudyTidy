@@ -1,4 +1,5 @@
 let user = document.getElementById("username").innerText;
+
 let topicsObject = usersDatabase[user]["data"];
 
 
