@@ -31,11 +31,12 @@
                 <div class="loging-bar">
                     <div class="current-user">
                         <h3 class="username" id="username">
-                            Denis
+                            
+
                         </h3>
                     </div>
                     <div class="switch-user-button">
-                        <button>Switch Account</button>
+                        <button onclick="switchUser()">Switch Account</button>
                     </div>
                 </div>
                 <div class="addDayButtonDiv" id="addDayButtonDiv">
@@ -51,6 +52,9 @@
         </section>
 
     </div>
+    <script src="username.js"></script>
+    <script src="changeUserNameInHtml.js"></script>
+
     <script>
         // temporary, remove or move later
         let weeks = 15;
@@ -66,8 +70,11 @@
         // temporary; make this function activate on load or again if user is changed
         createWeeks(weeks);
     </script>
+    
     <script src="tree-topic-population.js"></script>
     <script src="update_user_database_functionality.js"></script>
+    <script src="switchuser.js"></script>
+    
 </body>
 
 </html>

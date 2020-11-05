@@ -17,7 +17,22 @@ function logIn(event) {
         alert("you are not registered")
     } else {
         if (usersDatabase[userName]["password"] == passWord) {
-            location.href = "index.html"
-        }
-    }
-}
+          localStorage["username"] = userName;  
+          location.href = "index.html";
+          } 
+
+      }     
+    } 
+    
+
+
+    
+      
+  
+
+
+
+    // if (usersDatabase[userName]["password"] > data[0]){
+    //   console.log(usersDatabase[userName]["data"])}
+    //   else{ createForm() 
+    //   }
