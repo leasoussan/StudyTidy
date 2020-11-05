@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyTidy</title>
+    <title>
+
+    </title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -16,58 +18,19 @@
         <section class="progress-bar" id="progress-bar"></section>
         <section class="main-page">
             <section class="main-page-left-bar">
-                <div class="info-collection">
-                    <div class="info-collection-left-side">
-                        <div class="date-input">
-                            <input id="date-selection" type="date">
-                        </div>
-                        <div class="check-box-input">
-                            <div class="checkbox" id="checkbox-container-1">
-                                <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1">
-                                <label for="checkbox1">checkbox1 text</label><br>
-                            </div>
-                            <div class="checkbox" id="checkbox-container-2">
-                                <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2">
-                                <label for="checkbox2">checkbox2 text</label><br>
-                            </div>
-                            <div class="checkbox" id="checkbox-container-3">
-                                <input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3">
-                                <label for="checkbox3">checkbox3 text</label><br>
-                            </div>
-                            <div class="checkbox" id="checkbox-container-4">
-                                <input type="checkbox" id="checkbox4" name="checkbox4" value="checkbox4">
-                                <label for="checkbox4">checkbox4 text</label><br>
-                            </div>
-                            <div class="checkbox" id="checkbox-container-5">
-                                <input type="checkbox" id="checkbox5" name="checkbox5" value="checkbox5">
-                                <label for="checkbox1">checkbox5 text</label><br>
-                            </div>
-                        </div>
-                        <div class="day-link-input">
-                            <input type="url" id="url-input" name="url-input" value="url-input">
-                            <label for="url-input">url-input text</label><br>
-                        </div>
-                        <div class="submit-input-button-container">
-                            <button class="submit-input-button">Submit</button>
-                        </div>
 
-
-                    </div>
-                    <div class="info-collection-notes">
-                        <input id="notes-input" type="text">
-                    </div>
-
-                </div>
                 <div class="drop-box-container">
                     <div class="drop-box" id="drop-box-1" style="background-color: green; border: 2px solid rgb(0, 75, 0)">Box 1</div>
                     <div class="drop-box" id="drop-box-2" style="background-color: yellow; border: 2px solid rgb(141, 141, 0)">Box 2</div>
                     <div class="drop-box" id="drop-box-3" style="background-color: orange; border: 2px solid rgb(141, 92, 0)">Box 3</div>
+                    <div class="drop-box" id="drop-box-4" style="background-color: red; border: 2px solid rgb(128, 0, 0)">Box 4</div>
+
                 </div>
             </section>
             <section class="main-page-side-bar">
                 <div class="loging-bar">
                     <div class="current-user">
-                        <h3 class="username">
+                        <h3 class="username" id="username">
                             Denis
                         </h3>
                     </div>
@@ -75,7 +38,13 @@
                         <button>Switch Account</button>
                     </div>
                 </div>
-                <div class="weeks-container">
+                <div class="addDayButtonDiv" id="addDayButtonDiv">
+                    <button class="addDayButton" id="addDayButton" "">
+                        Add Day
+                    </button>
+                </div>
+                <div class="weeks-container" id="weeks-container">
+
                     <div class="week-container">
                         <div class="week-header-container">
                             <h2 class="week">Week 1</h2>
@@ -136,10 +105,22 @@
         </section>
 
     </div>
-
+    <script>
+        // temporary, remove or move later
+        let weeks = 15;
+        let exerciseNames = ["Practice", "XP", "XP Gold", "XP Ninja", "Daily Challenge", "Mini-Project"]
+    </script>
     <script src="script.js"></script>
     <script src="drag-and-drop.js"></script>
     <script src="progress-bar.js"></script>
+    <script src="form-creation.js"></script>
+    <script src="tree-topic-creation.js"></script>
+    <script src="tree-week-creation.js"></script>
+    <script>
+        // temporary; make this function activate on load or again if user is changed
+        createWeeks(weeks);
+    </script>
+    <script src="tree-topic-population.js"></script>
 </body>
 
 </html>

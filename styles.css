@@ -1,7 +1,7 @@
 .page-space {
     margin: auto;
-    max-width: 900px;
-    width: 60%;
+    max-width: 1000px;
+    width: 75%;
     min-width: 600px;
     background-color: yellow;
     border: black solid 1px;
@@ -55,11 +55,12 @@
 
 .drop-box-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
 .drop-box {
-    width: 32%;
+    width: 45%;
     height: 50px;
     margin: 5px;
 }
@@ -84,6 +85,14 @@
 
 .switch-user-button {
     margin: 2px;
+}
+
+#addDayButtonDiv {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border: solid black 1px;
+    padding: 5px;
 }
 
 .weeks-container {
@@ -135,4 +144,34 @@
     height: 95%;
     border: solid black 0.2px;
     background-color: lightgrey;
+}
+
+#dateInputDiv {
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+}
+
+#subjectInputLabelPairDiv {
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+}
+
+#checkboxesInputSection {
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+}
+
+#startingInputSubmitButton {
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+}
+
+#inputCollectionForm {
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
 }
