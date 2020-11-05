@@ -1,5 +1,6 @@
 let progressBar = document.getElementById("progress-bar");
 
+
 function generateProgressBarElements(weeks) {
     let childrenToAppendToParent = [];
     for (let i = 0; i < weeks; i++) {
@@ -28,3 +29,5 @@ function appendChildrenToProgressBar(childrenArray, weeks) {
 }
 
 appendChildrenToProgressBar(progressBarElementArray, weeks);
+
+
