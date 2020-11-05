@@ -3,6 +3,7 @@ let usersDatabase = {
     lola: {
         username: "lola",
         password: "123456",
+        weeks: 10,
         data: {
             weekContainer_1: {
                 topicContainer_1_1: {
@@ -61,6 +62,7 @@ let usersDatabase = {
     jean: {
         username: "jean",
         password: "09876",
+        weeks: 14,
         data: {
             weekContainer_1: {
                 topicContainer_1_1: {
@@ -118,6 +120,7 @@ let usersDatabase = {
     doris: {
         username: "Doris",
         password: "11223344",
+        weeks: 5,
         data: {
             weekContainer_1: {
                 topicContainer_1_1: {
@@ -174,6 +177,7 @@ let usersDatabase = {
     miro: {
         username: "miro",
         password: "24680",
+        weeks: 8,
         data: {
             weekContainer_1: {
                 topicContainer_1_1: {

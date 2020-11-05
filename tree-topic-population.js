@@ -1,4 +1,4 @@
-let user = document.getElementById("username").innerText;
+// let user = document.getElementById("username").innerText;
 
 let topicsObject = usersDatabase[user]["data"];
 
@@ -23,6 +23,7 @@ function populateExistingTopics(topicsObject) {
             try {
                 let topicName = topicsObject[weekContainerID][currentTopicContainerID]["topicName"];
                 let exercises = topicsObject[weekContainerID][currentTopicContainerID]["exercises"];
+
                 let link = topicsObject[weekContainerID][currentTopicContainerID]["url"];
 
                 // topic text
