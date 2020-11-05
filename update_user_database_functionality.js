@@ -4,4 +4,4 @@ let date = startMyDayObject["date"];
 let subjectInput = startMyDayObject["subjectInput"];
 let urlInputValue = startMyDayObject["urlInputValue"];
 
-// usersDatabase
+console.log(usersDatabase);
