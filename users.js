@@ -1,20 +1,17 @@
 function addUser(event){
+  event.preventDefault()
 
         
   let info = document.getElementById("myform")
-  let user = document.createElement("div")
-  let username = document.getElementById("username") 
-  let password = document.getElementById("password")
-  let programm = document.getElementById("weeks")  
-
-  // addUser.username = username;
-  // addUser.password = password;
-  // addUser.programm = programm;
+  let username = document.getElementById("username").value 
+  let password = document.getElementById("password").value
+  let programm = document.getElementById("program").value
   
-  user.appendChild(username)
-  user.appendChild(password)
-  user.appendChild(programm)
-}
+  console.log(username)
+  console.log(password)
+  console.log(programm)
+  
+  
 
 
 
@@ -24,28 +21,38 @@ let addUserbtn = document.querySelector("button")
 addUserbtn.addEventListener("click", addUser)
 
 
+function user (fname, lname) {
+  this.usertName = fname;
+  this.password = password;
+  this.programm = programm;
+
+}
+
+
+
+
 // Initialize an object with properties and methods
-const usersDatabase = [{
-    username: "lola",
-    password: "123456",
-    programm: "12 weeks"
+let usersDatabase = {
+    "username": "lola",
+    "password": "123456",
+    "programm": "12 weeks"
   },
   
   {
     username: "jean",
     password: "09876",
-    programm: "10 weeks",
+    programm: "10 weeks"
   },
 
   {
     username: "Doris",
     password: "11223344",
-    programm: "12 weeks",
+    programm: "12 weeks"
   },
   {
       username: "miro",
       password: "24680",
-      programm: "14 weeeks",
+      programm: "14 weeeks"
   }
-]
+
 
