@@ -23,12 +23,17 @@ function populateExistingTopics(topicsObject) {
             try {
                 let topicName = topicsObject[weekContainerID][currentTopicContainerID]["topicName"];
                 let exercises = topicsObject[weekContainerID][currentTopicContainerID]["exercises"];
-                
+
+                let link = topicsObject[weekContainerID][currentTopicContainerID]["url"];
 
                 // topic text
                 let topicHeader = currentTopicContainer.getElementsByClassName("topicHeader")[0];
-               
-                topicHeader.innerText = topicName; 
+                topicHeader.innerHTML = `Day ${i+1}: <a href="${link}" target="_blank" rel="noopener noreferrer">${topicName}</a>`;
+                let topicNotesButton_Button = currentTopicContainer.getElementsByClassName("noteButton_Button")[0];
+                topicNotesButton_Button.classList.add("active");
+                let topicNotesButton_i = currentTopicContainer.getElementsByClassName("noteButton_i")[0];
+                topicNotesButton_i.classList.add("active");
+
                 // loop through exercises and populate them
                 let pElements = currentTopicContainer.getElementsByTagName("p");
                 for (let i = 0; i < pElements.length; i++) {

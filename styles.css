@@ -40,7 +40,7 @@
 
 .main-page-left-bar {
     border: black solid 1px;
-    background-color: white;
+    background-color: rgb(241, 175, 175);
     margin: 10px 5px;
     width: 70%;
     display: flex;
@@ -57,6 +57,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    background-color: white;
 }
 
 .drop-box {
@@ -173,4 +174,84 @@
     margin: 5px;
     padding: 5px;
     border: solid black 1px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    /* If you want dots under the hoverable text */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.notes_section_div {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: start;
+    height: 200px;
+    justify-items: start;
+    background-color: white;
+}
+
+.notes_section {
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    justify-items: start;
+    justify-content: start;
+}
+
+.noteButton_Button {
+    visibility: hidden;
+}
+
+.noteButton_i {
+    visibility: hidden;
+}
+
+.noteButton_Button.active {
+    visibility: visible;
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.noteButton_Button:hover.active {
+    visibility: visible;
+    background-color: RoyalBlue;
 }
