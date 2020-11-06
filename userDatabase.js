@@ -232,5 +232,3 @@ let usersDatabase = {
         }
     }
 }
-
-
