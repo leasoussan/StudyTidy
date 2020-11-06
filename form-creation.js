@@ -203,58 +203,42 @@ function createForm() {
 
         // INSERT NEW INFORMATION INTO TREE
         // Inserting the new information into the tree and the usersDatabase js
+        let weeks = document.getElementsByClassName("weekContainer")
+        for (week of weeks) {
+            let weekHeader = week.getElementsByClassName("weekHeader")[0];
+            let weekHeaderText = weekHeader.innerText;
+            if (weekHeaderText == weekInput.replace("_", " ")) {
+                // we located the week, now we locate the subject
+                let topicElements = week.getElementsByClassName("topicContainer");
+                // we select the topic by index of the input day
+                let inputDayNum = weekdayInput[weekdayInput.length - 1];
+                let topicElement = topicElements[parseInt(inputDayNum) - 1];
 
-        function updateTopicTree() {
-            let dataObject = usersDatabase[username]["data"];
-            let weeks = document.getElementsByClassName("weekContainer")
-            for (week of weeks) {
-                let weekHeader = week.getElementsByClassName("weekHeader")[0];
-                let weekHeaderText = weekHeader.innerText;
-                if (weekHeaderText == weekInput.replace("_", " ")) {
-                    // we located the week, now we locate the subject
-                    let topicElements = week.getElementsByClassName("topicContainer");
-                    // we select the topic by index of the input day
-                    let inputDayNum = weekdayInput[weekdayInput.length - 1];
-                    let topicElement = topicElements[parseInt(inputDayNum) - 1];
-
-                    // topicElement is the topic that has to be ammended
-                    let topicElementHeader = topicElement.getElementsByClassName("topicHeader")[0];
-                    topicElementHeader.innerText = subjectInput;
-                    let topicElementExercises = topicElement.getElementsByClassName("exercise");
-                    for (let i = 0; i < topicElementExercises.length; i++) {
-                        let exerciseElement = topicElementExercises[i];
-                        let exerciseName = exerciseNames[i];
-                        exerciseName = exerciseName.replace("_", " ");
-                        let exerciseBoolean = checkboxValues[i];
-                        if (exerciseBoolean == true) {
-                            exerciseElement.innerText = exerciseName;
-                            try {
-                                exerciseElement.classList.remove("active");
-                            } catch {}
-                            exerciseElement.classList.add("active");
-                            exerciseElement.style.border = "3px solid red";
-                        } else {
+                // topicElement is the topic that has to be ammended
+                let topicElementHeader = topicElement.getElementsByClassName("topicHeader")[0];
+                topicElementHeader.innerText = subjectInput;
+                let topicElementExercises = topicElement.getElementsByClassName("exercise");
+                for (let i = 0; i < topicElementExercises.length; i++) {
+                    let exerciseElement = topicElementExercises[i];
+                    let exerciseName = exerciseNames[i];
+                    exerciseName = exerciseName.replace("_", " ");
+                    let exerciseBoolean = checkboxValues[i];
+                    if (exerciseBoolean == true) {
+                        exerciseElement.innerText = exerciseName;
+                        try {
                             exerciseElement.classList.remove("active");
-                            exerciseElement.style.border = "";
-                            exerciseElement.innerText = "";
-                        }
-
-
+                        } catch {}
+                        exerciseElement.classList.add("active");
+                        exerciseElement.style.border = "3px solid red";
+                    } else {
+                        exerciseElement.classList.remove("active");
+                        exerciseElement.style.border = "";
+                        exerciseElement.innerText = "";
                     }
-
                 }
-
             }
         }
-
-        updateTopicTree()
-
-
-
-
-
     }
-
     startMyDayButton.addEventListener("click", insertTopicInputIntoTree);
 }
 
