@@ -174,7 +174,7 @@ function createForm() {
     inputCollectionForm.appendChild(submitButton);
 
     // APPEND THE FORM TO A PARENT (function argument)
-    parent.appendChild(inputCollectionForm);
+    parent.prepend(inputCollectionForm);
 
 
     // FUNCTIONALITY TO COLLECT INPUT & INSERT INTO TREE AND DATABASE
