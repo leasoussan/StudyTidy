@@ -35,8 +35,8 @@
             <section class="main-page-side-bar">
                 <div class="loging-bar">
                     <div class="current-user">
-                        <h3 class="username" id="username">
 
+                        <h3 class="username" id="username">
                         </h3>
                     </div>
                     <div class="switch-user-button">
@@ -48,6 +48,7 @@
                         Add Day
                     </button>
                 </div>
+
                 <div class="weeks-container" id="weeks-container">
                 </div>
             </section>
@@ -56,10 +57,11 @@
     </div>
     <script src="username.js"></script>
     <script src="changeUserNameInHtml.js"></script>
-
+    <script src="userDatabase.js"></script>
     <script>
         // temporary, remove or move later
-        let weeks = 15;
+        let user = document.getElementById("username").innerText
+        let weeks = usersDatabase[user]["weeks"]
         let exerciseNames = ["Practice", "XP", "XP_Gold", "XP_Ninja", "Daily_Challenge", "Mini_Project"];
     </script>
     <script src="userDatabase.js"></script>
@@ -70,6 +72,7 @@
     <script src="tree-topic-population.js"></script>
     <script src="form-creation.js"></script>
     <script src="switchuser.js"></script>
+    <script src="progress-bar-score.js"></script>
 
 </body>
 
