@@ -51,11 +51,8 @@ function createWeeks(weeks) {
             let topicHeader = document.createElement("h3");
             topicHeader.setAttribute("id", `topicHeader_${weekNo+1}_${topicNo+1}`);
             topicHeader.setAttribute("class", "topicHeader");
-            let notesButton = document.createElement("button");
-            notesButton.setAttribute("class", "noteButton_Button");
-            notesButton.innerHTML = '<i class="fa fa-folder noteButton_i" id=' + `noteButton_${topicNo+1}` + '}></i>'
             topicHeaderDiv.appendChild(topicHeader);
-            topicHeaderDiv.appendChild(notesButton);
+
 
 
             topicContainer.appendChild(topicHeaderDiv);
@@ -78,3 +75,5 @@ function createWeeks(weeks) {
         weeksContainer.appendChild(topicsDiv);
     }
 }
+
+createWeeks(weeks);
