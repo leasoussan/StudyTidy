@@ -13,9 +13,9 @@ let usersDatabase = {
                         XP: "red",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "green"
+                        Mini_Project: "green"
                     },
-                    notes: "some notes",
+                    notes: "lola's notes, topicContainer_1_1",
                     url: "www.google.com"
                 },
                 topicContainer_1_2: {
@@ -23,9 +23,9 @@ let usersDatabase = {
                     exercises: {
                         Practice: "red",
                         XP: "green",
-                        Mini_project: "yellow"
+                        Mini_Project: "yellow"
                     },
-                    notes: "some notes",
+                    notes: "lola's notes, topicContainer_1_2",
                     url: "www.google.com"
                 }
             },
@@ -37,9 +37,9 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
-                    notes: "some notes",
+                    notes: "lola's notes, topicContainer_2_1",
                     url: "www.google.com"
                 },
                 topicContainer_2_2: {
@@ -49,9 +49,9 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
-                    notes: "some notes",
+                    notes: "lola's notes, topicContainer_2_2",
                     url: "www.google.com"
                 }
             }
@@ -72,9 +72,9 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "green",
                         XP_Ninja: "green",
-                        Mini_project: "green"
+                        Mini_Project: "green"
                     },
-                    notes: "some notes",
+                    notes: "jean's notes, topicContainer_1_1",
                     url: "www.google.com"
                 },
                 topicContainer_1_2: {
@@ -82,9 +82,9 @@ let usersDatabase = {
                     exercises: {
                         Practice: "red",
                         XP: "green",
-                        Mini_project: "yellow"
+                        Mini_Project: "yellow"
                     },
-                    notes: "some notes",
+                    notes: "jean's notes, topicContainer_1_2",
                     url: "www.google.com"
                 }
             },
@@ -96,7 +96,7 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -108,7 +108,7 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -130,7 +130,7 @@ let usersDatabase = {
                         XP: "red",
                         XP_Gold: "yellow",
                         XP_Ninja: "yellow",
-                        Mini_project: "yellow"
+                        Mini_Project: "yellow"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -140,7 +140,7 @@ let usersDatabase = {
                     exercises: {
                         Practice: "red",
                         XP: "green",
-                        Mini_project: "yellow"
+                        Mini_Project: "yellow"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -154,7 +154,7 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -166,7 +166,7 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -187,7 +187,7 @@ let usersDatabase = {
                         XP: "orange",
                         XP_Gold: "orange",
                         XP_Ninja: "orange",
-                        Mini_project: "green"
+                        Mini_Project: "green"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -197,7 +197,7 @@ let usersDatabase = {
                     exercises: {
                         Practice: "red",
                         XP: "green",
-                        Mini_project: "yellow"
+                        Mini_Project: "yellow"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -211,7 +211,7 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
                     notes: "some notes",
                     url: "www.google.com"
@@ -223,7 +223,7 @@ let usersDatabase = {
                         XP: "green",
                         XP_Gold: "yellow",
                         XP_Ninja: "orange",
-                        Mini_project: "red"
+                        Mini_Project: "red"
                     },
                     notes: "some notes",
                     url: "www.google.com"
