@@ -1,15 +1,3 @@
-// let notesButton = document.createElement("button");
-// notesButton.setAttribute("class", "noteButton_Button");
-// notesButton.innerHTML = '<i class="fa fa-folder noteButton_i" id=' + `noteButton_${topicNo+1}` + '}></i>'
-// topicHeaderDiv.appendChild(notesButton);
-
-// let topicNotesButton_Button = currentTopicContainer.getElementsByClassName("noteButton_Button")[0];
-// topicNotesButton_Button.classList.add("active");
-// let topicNotesButton_i = currentTopicContainer.getElementsByClassName("noteButton_i")[0];
-// topicNotesButton_i.classList.add("active");
-
-
-
 function addNotesButton(topicHeaderDiv) {
     let topicHeaderDivID = topicHeaderDiv.getAttribute("id");
     let reg = /(?<=topicHeaderDiv)(\w+)/;
@@ -22,31 +10,54 @@ function addNotesButton(topicHeaderDiv) {
     notesButton.innerText = "Notes"
     topicHeaderDiv.appendChild(notesButton)
 
+    notesButton.addEventListener("click", notesButtonClick)
 
-    function editTopicNotes(event) {
-        let notesSectionElement = document.getElementsByClassName("notes_section")[0];
-        let username = document.getElementById("username").innerText
-        let regWeekNo = /(?<=topicHeaderDiv)(_\d+)/
-        let weekID = "weekContainer" + topicHeaderDivID.match(regWeekNo)[0];
-        let topicID = "topicContainer" + topicHeaderDivID.match(reg)[0];
-        let userNotes = usersDatabase[username]["data"][weekID][topicID]["notes"]
-        notesSectionElement.value = userNotes;
-
-        let saveNotesButton = document.getElementById("saveNotesButton");
-
-        function saveNotes(event) {
-            console.log("saveNotes function activated");
-            let notesToSave = notesSectionElement.value;
-            console.log("notesToSave: ", notesToSave);
-            usersDatabase[username]["data"][weekID][topicID]["notes"] = notesToSave
-        }
-        saveNotesButton.addEventListener("click", saveNotes)
-    }
-
-    notesButton.addEventListener("click", editTopicNotes)
 }
 
+function notesButtonClick(event) {
+    event.preventDefault();
+    console.log("event: ", event);
+    let buttonID = event.target.id;
+    let buttonElement = document.getElementById(buttonID);
+    buttonElement.classList.add("notesButtonActivated");
+    let reg = /(?<=noteButton_)(\d+)_(\d+)/
+    let weekNum = buttonID.match(reg)[1];
+    let topicNum = buttonID.match(reg)[2];
+    // present notes on text area
+    let notesSectionElement = document.getElementsByClassName("notes_section")[0];
+    let username = document.getElementById("username").innerText;
+    let weekID = `weekContainer_${weekNum}`;
+    let topicID = `topicContainer_${weekNum}_${topicNum}`;
+    let userNotes = usersDatabase[username]["data"][weekID][topicID]["notes"]
+    notesSectionElement.value = userNotes;
+    // add event listener to save notes button
+    let saveNotesButton = document.getElementById("saveNotesButton");
+    saveNotesButton.addEventListener("click", saveNotesButtonClick);
+}
+
+
+function saveNotesButtonClick(event) {
+    event.preventDefault();
+    let notesButtonElement = document.getElementsByClassName("notesButtonActivated")[0];
+    console.log("notesButtonElement: ", notesButtonElement);
+    let notesButtonID = notesButtonElement.getAttribute("id");
+    let reg = /(?<=noteButton_)(\d+)_(\d+)/
+    let weekNum = notesButtonID.match(reg)[1];
+    let topicNum = notesButtonID.match(reg)[2];
+    let username = document.getElementById("username").innerText;
+    let weekID = `weekContainer_${weekNum}`;
+    let topicID = `topicContainer_${weekNum}_${topicNum}`;
+    let saveNotesButton = document.getElementById("saveNotesButton");
+    let notesSectionElement = document.getElementsByClassName("notes_section")[0];
+    let notesToSave = notesSectionElement.value;
+    usersDatabase[username]["data"][weekID][topicID]["notes"] = notesToSave;
+    saveNotesButton.removeEventListener("click", saveNotesButtonClick);
+    notesButtonElement.classList.remove("notesButtonActivated");
+}
+
+
 function removeNotesButton(topicHeaderDiv) {
-    let notesButtonElement = topicHeaderDiv.getElementsByClassName(noteButton_Button)[0]
+    let notesButtonElement = topicHeaderDiv.getElementsByClassName(noteButton_Button)[0];
+    notesButtonElement.removeEventListener(notesButtonClick);
     topicHeaderDiv.removeChild(notesButtonElement);
 }

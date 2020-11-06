@@ -158,8 +158,7 @@
 
 .progress-bar-element {
     height: 95%;
-    border: solid orangered 1px;
-    background-color: lightgrey;
+    margin: 2px 2px;
 }
 
 #dateInputDiv {

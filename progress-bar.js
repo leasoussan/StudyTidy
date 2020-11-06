@@ -22,12 +22,12 @@ function appendChildrenToProgressBar(childrenArray, weeks) {
         let widthPerc = 1 / (weeks)
         widthPerc = Math.round(widthPerc * 100, 0);
         child.style.width = `${widthPerc}%`;
+        child.style.heigth = "95%";
         child.setAttribute("id", `progress-bar-element-${i+1}`)
-        child.innerText = `Wk${i+1}`
+        child.innerText = `Week ${i+1}`;
+        child.style.fontSize = "14px";
         parent.appendChild(child);
     }
 }
 
 appendChildrenToProgressBar(progressBarElementArray, weeks);
-
-

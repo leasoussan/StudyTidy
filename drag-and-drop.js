@@ -15,7 +15,6 @@ for (targetBox of targetBoxes) {
 
 function allowDrop(event) {
     event.preventDefault()
-    console.log("allowDrop")
 }
 
 function dragStart(event) {
@@ -27,29 +26,24 @@ function dragStart(event) {
     // transfer the exercise id to dragDrop
     let exerciseID = event.target.id;
     event.dataTransfer.setData("id", exerciseID);
-    console.log("dragStart, exerciseID transfer: ", exerciseID)
 }
 
 function dragDrop(event) {
     event.preventDefault()
     let boxBackgroundColor = event.target.style.backgroundColor;
-    console.log("boxBackgroundColor: ", event.target);
     let id = event.dataTransfer.getData("id");
     let exerciseID = document.getElementById(id);
-    console.log(`3px solid ${boxBackgroundColor}`)
     exerciseID.style.border = `3px solid ${boxBackgroundColor}`;
-    console.log("dragDrop, exerciseID: ", exerciseID);
     event.target.classList.remove('over');
+    calculateScoresForProgressBar()
 }
 
 function hoverOver(event) {
     event.target.classList.add('over');
-    console.log("hoverOver")
 
 }
 
 function hoverOff(event) {
     event.target.classList.remove('over');
-    console.log("hoverOff")
 
 }

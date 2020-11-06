@@ -246,6 +246,7 @@ function createForm() {
                         // remove the exercise in database
                         delete usersDatabase[username]["data"][weekID][topicID]["exercises"][exerciseNames[i]]
                     }
+                    calculateScoresForProgressBar()
                 }
             }
         }
