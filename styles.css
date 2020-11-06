@@ -1,10 +1,9 @@
 .page-space {
     margin: auto;
     max-width: 1000px;
-    width: 100% min-width: 600px;
-
+    width: 100%;
+    min-width: 600px;
 }
-
 
 #background {
     /* background-image: url("img/background.png"); */
@@ -16,7 +15,7 @@
     align-content: center;
 }
 
-#username{
+#username {
     padding-right: 20px;
     margin-left: 20px;
 }
@@ -25,7 +24,7 @@
     width: 100%;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-weight: bold;
 }
 
@@ -38,7 +37,6 @@
     background-color: lightskyblue;
     border: black solid 1px;
     margin-top: 20px;
-   
 }
 
 .main-page {
@@ -96,7 +94,7 @@
     padding: 5px;
 }
 
-#avatar{
+#avatar {
     height: 50px;
     width: 50px;
     border-radius: 50%;
