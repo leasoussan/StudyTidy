@@ -1,31 +1,44 @@
 .page-space {
     margin: auto;
     max-width: 1000px;
-    width: 75%;
-    min-width: 600px;
-    background-color: yellow;
-    border: black solid 1px;
+    width: 100% min-width: 600px;
+
+}
+
+
+#background {
+    /* background-image: url("img/background.png"); */
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #e6fff7;
+    height: 50px;
+    align-content: center;
+}
+
+#username{
+    padding-right: 20px;
+    margin-left: 20px;
 }
 
 .navbar {
-    margin: auto;
-    height: 40px;
     width: 100%;
-    background-color: rgb(64, 146, 197);
-    border: black solid 1px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
+}
+
+.navbar-brand{
+    font-weight: bold;
 }
 
 .progress-bar {
+    display: flex;
+    flex-direction: row;
     margin: auto;
     height: 20px;
     width: 95%;
     background-color: lightskyblue;
     border: black solid 1px;
-    display: flex;
-    justify-content: center;
+    margin-top: 20px;
+   
 }
 
 .main-page {
@@ -75,13 +88,18 @@
 }
 
 .loging-bar {
-    border: solid black 1px;
-    padding: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
+    padding: 5px;
+}
+
+#avatar{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 .switch-user-button {
@@ -142,7 +160,7 @@
 
 .progress-bar-element {
     height: 95%;
-    border: solid black 0.2px;
+    border: solid orangered 1px;
     background-color: lightgrey;
 }
 
