@@ -1,36 +1,58 @@
 .page-space {
     margin: auto;
     max-width: 1000px;
-    width: 75%;
-    min-width: 600px;
-    background-color: yellow;
-    border: black solid 1px;
+    width: 100% min-width: 600px;
+
 }
 
-.navbar {
-    margin: auto;
-    height: 40px;
+#background {
+    background-image: url("img/background.png");
     width: 100%;
-    background-color: rgb(64, 146, 197);
-    border: black solid 1px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover background-color: #e6fff7;
+    height: 200px;
+}
+
+
+
+/* .h1, h2, h3 ,p {
+    font-style: gotham-rounded, helvetica neue, helvetica ;
+} */
+
+
+.navbar {
+    width: 100%;
+}
+
+
+.loging-bar {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-bottom: 5px;
 }
 
+.switch-user-button {
+    margin: 2px;
+}
+
 .progress-bar {
+    display: flex;
+    flex-direction: row;
     margin: auto;
     height: 20px;
-    width: 95%;
-    background-color: lightskyblue;
+    width: 90%;
+    background-color: #ff6600;
     border: black solid 1px;
-    display: flex;
-    justify-content: center;
+    padding: 5px;
+    justify-content: last baseline;
+
 }
 
 .main-page {
-    border: black solid 1px;
-    background-color: lightskyblue;
+    background-color: #e6f2ff;
     margin: 10px 5px;
     display: flex;
     flex-direction: row;
@@ -39,12 +61,11 @@
 }
 
 .main-page-left-bar {
-    border: black solid 1px;
+    display: flex;
+    flex-direction: column;
     background-color: white;
     margin: 10px 5px;
     width: 70%;
-    display: flex;
-    flex-direction: column;
     height: 95%;
 }
 
@@ -60,10 +81,34 @@
 }
 
 .drop-box {
-    width: 45%;
-    height: 50px;
+    display: inline;
+    justify-content: flex-end;
+    width: 150px;
+    height: 150px;
     margin: 5px;
 }
+
+#drop-box-1 {
+    background-color: green;
+    border: 2px solid rgb(0, 75, 0)
+}
+
+#drop-box-2 {
+    background-color: yellow;
+    border: 2px solid rgb(141, 141, 0)
+}
+
+#drop-box-3 {
+    background-color: orange;
+    border: 2px solid rgb(141, 92, 0)
+}
+
+#drop-box-4 {
+    background-color: red;
+    border: 2px solid rgb(128, 0, 0)
+}
+
+
 
 .main-page-side-bar {
     border: black solid 1px;
@@ -73,19 +118,6 @@
     padding: 5px;
 }
 
-.loging-bar {
-    border: solid black 1px;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.switch-user-button {
-    margin: 2px;
-}
 
 #addDayButtonDiv {
     display: flex;
