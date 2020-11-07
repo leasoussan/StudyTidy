@@ -1,9 +1,12 @@
+body {
+    height: 100vh;
+}
+
 .page-space {
     max-width: 1000px;
     width: 80%;
     min-width: 500px;
     margin: auto;
-   
 }
 
 #background {
@@ -61,27 +64,22 @@
 .main-page-left-bar {
     display: flex;
     flex-direction: column;
-    margin: auto;
     width: 70%;
-    margin-left: 40px;
-    height: 100%;
     align-items: center;
+    margin-top: 4px;
 }
-
-
 
 @media only screen and (max-width: 900px) {
     .main-page-left-bar {
-      width: 50%;
+        width: 50%;
     }
-  }
+}
 
 @media only screen and (max-width: 500px) {
     .main-page-left-bar {
-      width: 90%;
+        width: 90%;
     }
-  }
-
+}
 
 .notes-input {
     display: flex;
@@ -89,7 +87,6 @@
     align-items: center;
     width: 90%;
     height: 90%;
-
 }
 
 .drop-box-container {
@@ -98,26 +95,28 @@
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.4)
 }
 
 #drop-box-1 {
-    width: 150px;
-    height: 150px;
+    width: 23%;
+    height: 120px;
 }
 
 #drop-box-2 {
-    width: 150px;
-    height: 150px
+    width: 23%;
+    height: 120px;
 }
 
 #drop-box-3 {
-    width: 150px;
-    height: 150px
+    width: 23%;
+    height: 120px;
 }
 
 #drop-box-4 {
-    width: 150px;
-    height: 150px
+    width: 23%;
+    height: 120px;
 }
 
 .drop-box {
@@ -128,7 +127,6 @@
 }
 
 #drop-box-1 {
-    
     border: green solid 3px;
     background-color: green;
 }
@@ -154,8 +152,6 @@
     background-color: ivory;
     height: 100vh;
 }
-
-
 
 .loging-bar {
     display: flex;
@@ -183,21 +179,15 @@
     padding: 5px;
 }
 
-
-.weekHeader{
+.weekHeader {
     background-color: #476b6b;
     padding: 5px;
     color: ivory;
 }
 
-.topicHeader{
-    padding: 4px;
-    background-color:  #85adad;
-}
-
-.active_currentTopicContainer{
-    
+.active_topicHeader {
     color: lavender;
+    background-color: #85adad;
     padding: 4px;
 }
 
@@ -205,14 +195,11 @@
     color: lavender;
     font-size: smaller;
 }
+
 .weeks-container {
     overflow: scroll;
     max-height: 100vh;
 }
-
-
-
-
 
 .weekContainer {
     background-color: #ebebe0;
@@ -283,14 +270,21 @@
     margin: 5px;
     padding: 5px;
     border: solid black 1px;
-
 }
 
-#inputCollectionForm_addDay{
+#inputCollectionForm_addDay {
     margin-top: 30px;
     width: 80%;
-    background-color:rgba(255,255,255,0.6) ;
-    border: solid   #cccccc 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#inputCollectionForm_removeDay {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 .tooltip {
@@ -340,16 +334,16 @@
     height: 400px;
     align-content: center;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
 }
 
 .notes_section {
-    width: 90%;
+    width: 100%;
     height: 75%;
- 
 }
 
 .noteButton_Button {
-   
     visibility: hidden;
 }
 
@@ -372,41 +366,34 @@
     background-color: RoyalBlue;
 }
 
-.noteButton{
+.noteButton {
     margin-left: 20px;
     margin-bottom: 10px;
-
 }
 
-.saveNotesButton{
+.saveNotesButton {
     margin-top: 20px;
     width: 100px;
 }
 
-
-
 @media only screen and (max-width: 900px) {
     .main-page-left-bar {
-      width: 50%;
+        width: 50%;
     }
     .main-page-side-bar {
         width: 50%;
-      }
-  }
+    }
+}
 
-  
 @media only screen and (max-width: 500px) {
     .main-page-left-bar {
-      width: 90%;
+        width: 90%;
     }
-
-  }
-
+}
 
 @media only screen and (max-width: 500px) {
     .main-page-side-bar {
         width: 100%;
         height: 40vh;
-      }
-  }
-
+    }
+}

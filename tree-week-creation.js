@@ -142,10 +142,11 @@ function populateWeekTreeWithContent() {
 
                 let link = topicsObject[weekContainerID][currentTopicContainerID]["url"];
 
-                currentTopicContainer.classList.add("active_currentTopicContainer")
+
 
                 // topic text and button
                 let topicHeader = currentTopicContainer.getElementsByClassName("topicHeader")[0];
+                topicHeader.classList.add("active_topicHeader")
                 topicHeader.innerHTML = `Day ${i+1}: <a href="${link}" target="_blank" rel="noopener noreferrer">${topicName}</a>`;
                 topicHeaderDiv = currentTopicContainer.getElementsByClassName("topicHeaderDiv")[0]
                 addNotesButton(topicHeaderDiv);
