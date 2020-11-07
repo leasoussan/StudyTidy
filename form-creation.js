@@ -140,7 +140,8 @@ function addDayToTree() {
     notesLabel.setAttribute("id", "notesLabel");
     notesLabel.setAttribute("class", "notesLabel");
     notesLabel.innerText = "Notes";
-    notesInputLabelPairDiv.appendChild(notesLabel);
+    notesLabelDiv.appendChild(notesLabel)
+    notesInputLabelPairDiv.appendChild(notesLabelDiv);
 
     // SUBMIT FORM BUTTON
     // creating the submit button
@@ -230,7 +231,7 @@ function addDayToTree() {
         if (!(topicContainerID in usersDatabase[user]["data"][weekContainerID])) {
             usersDatabase[user]["data"][weekContainerID][topicContainerID] = {};
         }
-        if (!("exercises" in usersDatabase[user]["data"][weekContainerID])) {
+        if (!("exercises" in usersDatabase[user]["data"][weekContainerID][topicContainerID])) {
             usersDatabase[user]["data"][weekContainerID][topicContainerID]["exercises"] = {};
         }
 
@@ -364,8 +365,6 @@ function removeDayFromTree() {
         let weekdayInputNum = weekdayInput.match(/Day_(\d+)/)[1];
         let weekContainerID = `weekContainer_${weekInputNum}`;
         let topicContainerID = `topicContainer_${weekInputNum}_${weekdayInputNum}`
-        let topicElement = document.getElementById(topicContainerID)
-
 
         // removing the form
         parent.removeChild(inputCollectionForm_removeDay);
@@ -376,7 +375,6 @@ function removeDayFromTree() {
         saveUsersDatabase(usersDatabase);
         refreshWeekTree();
         calculateScoresForProgressBar();
-        console.log("removeTopicFromTree")
     }
 
     removeDayButton.addEventListener("click", removeTopicFromTree);
