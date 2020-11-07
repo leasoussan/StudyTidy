@@ -3,14 +3,13 @@
 }
 
 .page-space {
+    max-width: 90%;
     margin: auto;
-    max-width: 1000px;
-    width: 100%;
-    min-width: 600px;
+    background-color: #e0ebeb;
 }
 
 #background {
-    background-image: url("img/background.png");
+    /* background-image: url("img/background.png"); */
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,8 +61,6 @@
     margin: 10px 5px;
     display: flex;
     flex-direction: row;
-    height: 95%;
-    max-height: 800px;
 }
 
 .main-page-left-bar {
@@ -144,7 +141,6 @@
 }
 
 .main-page-side-bar {
-    border: black solid 1px;
     margin: 5px;
     width: 30%;
     padding: 5px;
@@ -173,8 +169,11 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    border: solid black 1px;
     padding: 5px;
+}
+
+.weekHeader {
+    background-color: darkgray;
 }
 
 .weeks-container {
@@ -198,7 +197,6 @@
 
 .info-collection {
     padding: 5px;
-    border: solid black 1px;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -206,13 +204,11 @@
 
 .info-collection-left-side {
     width: 70%;
-    border: solid black 1px;
     background-color: white;
 }
 
 .info-collection-notes {
     width: 30%;
-    border: solid black 1px;
     background-color: white;
 }
 
@@ -297,23 +293,23 @@
 }
 
 .notes_section_div {
+    display: flex;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     justify-content: start;
     height: 200px;
-    justify-items: start;
-    background-color: white;
 }
 
 .notes_section {
-    width: 95%;
-    height: 95%;
+    width: 85%;
+    height: 75%;
     margin: auto;
     justify-items: center;
     justify-content: center;
 }
 
 .noteButton_Button {
+    margin-top: 20px;
     visibility: hidden;
 }
 
