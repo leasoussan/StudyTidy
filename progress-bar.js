@@ -43,6 +43,8 @@ function scrollToWeekElementInTree(event) {
 }
 
 
+
+
 // set color for progress bar elements according colors in topic tree
 function calculateScoresForProgressBar() {
     let weekContainers = document.getElementsByClassName("weekContainer")
