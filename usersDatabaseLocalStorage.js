@@ -1,5 +1,4 @@
-let usersDatabase = {
-
+localStorage.setItem("usersDatabase", JSON.stringify({
     lola: {
         username: "lola",
         password: "123456",
@@ -7,22 +6,59 @@ let usersDatabase = {
         data: {
             weekContainer_1: {
                 topicContainer_1_1: {
-                    topicName: "HTML Basics",
+                    topicName: "HTML & CSS",
                     exercises: {
                         Practice: "green",
-                        XP: "red",
-                        XP_Gold: "yellow",
-                        XP_Ninja: "orange",
+                        XP: "green",
+                        XP_Gold: "green",
+                        XP_Ninja: "green",
+                        Daily_Challenge: "green",
                         Mini_Project: "green"
                     },
                     notes: "lola's notes, topicContainer_1_1",
-                    url: "www.google.com"
+                    url: "http://www.google.com"
                 },
                 topicContainer_1_2: {
-                    topicName: "CSS Basics",
+                    topicName: "Git And Github",
                     exercises: {
-                        Practice: "red",
+                        Practice: "green",
                         XP: "green",
+                        XP_Gold: "green",
+                        Mini_Project: "green"
+                    },
+                    notes: "lola's notes, topicContainer_1_2",
+                    url: "www.google.com"
+                },
+                topicContainer_1_3: {
+                    topicName: "CSS Grid + CSS Layout",
+                    exercises: {
+                        Practice: "green",
+                        XP: "green",
+                        Daily_Challenge: "green",
+                        Mini_Project: "yellow"
+                    },
+                    notes: "lola's notes, topicContainer_1_2",
+                    url: "www.google.com"
+                },
+                topicContainer_1_4: {
+                    topicName: "Bootstrap",
+                    exercises: {
+                        Practice: "green",
+                        XP: "green",
+                        XP_Gold: "green",
+                        XP_Ninja: "green",
+                        Daily_Challenge: "green",
+                        Mini_Project: "yellow"
+                    },
+                    notes: "lola's notes, topicContainer_1_2",
+                    url: "www.google.com"
+                },
+                topicContainer_1_5: {
+                    topicName: "Coding Day",
+                    exercises: {
+                        Practice: "green",
+                        XP: "green",
+                        Daily_Challenge: "green",
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
@@ -31,7 +67,7 @@ let usersDatabase = {
             },
             weekContainer_2: {
                 topicContainer_2_1: {
-                    topicName: "JavaScript Basics",
+                    topicName: "Intro to JavaScript",
                     exercises: {
                         Practice: "red",
                         XP: "green",
@@ -43,7 +79,7 @@ let usersDatabase = {
                     url: "www.google.com"
                 },
                 topicContainer_2_2: {
-                    topicName: "Advanced JavaScript",
+                    topicName: "Learning Conditionals",
                     exercises: {
                         Practice: "red",
                         XP: "green",
@@ -53,15 +89,54 @@ let usersDatabase = {
                     },
                     notes: "lola's notes, topicContainer_2_2",
                     url: "www.google.com"
+                },
+                topicContainer_2_3: {
+                    topicName: "Learning Loops",
+                    exercises: {
+                        Practice: "green",
+                        XP: "green",
+                        XP_Gold: "green",
+                        XP_Ninja: "green",
+                        Daily_Challenge: "green",
+                        Mini_Project: "yellow"
+                    },
+                    notes: "lola's notes, topicContainer_1_2",
+                    url: "www.google.com"
+                },
+                topicContainer_2_4: {
+                    topicName: "Learning Functions",
+                    exercises: {
+                        Practice: "green",
+                        XP: "green",
+                        XP_Gold: "green",
+                        XP_Ninja: "green",
+                        Daily_Challenge: "green",
+                        Mini_Project: "yellow"
+                    },
+                    notes: "lola's notes, topicContainer_1_2",
+                    url: "www.google.com"
+                },
+                topicContainer_2_5: {
+                    topicName: "Mini-Project Day",
+                    exercises: {
+                        Practice: "green",
+                        XP: "green",
+                        XP_Gold: "green",
+                        XP_Ninja: "green",
+                        Daily_Challenge: "green",
+                        Mini_Project: "yellow"
+                    },
+                    notes: "lola's notes, topicContainer_1_2",
+                    url: "www.google.com"
+
                 }
             }
         }
-
     },
 
     jean: {
         username: "jean",
-        password: "09876",
+        password: "123456",
         weeks: 14,
         data: {
             weekContainer_1: {
@@ -119,7 +194,7 @@ let usersDatabase = {
 
     doris: {
         username: "Doris",
-        password: "11223344",
+        password: "123456",
         weeks: 5,
         data: {
             weekContainer_1: {
@@ -176,7 +251,7 @@ let usersDatabase = {
     },
     miro: {
         username: "miro",
-        password: "24680",
+        password: "123456",
         weeks: 8,
         data: {
             weekContainer_1: {
@@ -231,4 +306,4 @@ let usersDatabase = {
             }
         }
     }
-}
+}))
