@@ -1,10 +1,7 @@
-let loginButton = document.getElementById("button")
-
-loginButton.addEventListener("click", logIn)
-
 function logIn(event) {
     event.preventDefault()
     usersDatabase = retrieveUsersDatabase();
+    console.log(usersDatabase);
     let userName;
     let passWord;
 
@@ -43,7 +40,7 @@ function logIn(event) {
     // if username and password are both correct
     if (usersDatabase[userName]["password"] == passWord) {
         localStorage["username"] = userName;
-        location.href = "index.html";
+        location.href = "main_page.html";
     }
 
     // if the username is correct but password is not
@@ -51,4 +48,10 @@ function logIn(event) {
         alert("Incorrect Password");
         return
     }
+}
+
+function newUserClick(event) {
+    event.preventDefault();
+    location.href = "registerPage.html";
+
 }

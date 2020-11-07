@@ -164,7 +164,7 @@ function addDayToTree() {
     inputCollectionForm_addDay.appendChild(submitButton);
     inputCollectionForm_addDay.appendChild(cancelButton);
     // APPEND THE FORM TO THE PARENT
-    parent.appendChild(inputCollectionForm_addDay);
+    parent.prepend(inputCollectionForm_addDay);
 
 
     // FUNCTIONALITY TO COLLECT INPUT & INSERT INTO TREE AND DATABASE
@@ -174,7 +174,7 @@ function addDayToTree() {
         event.preventDefault();
 
         // COLLECT INFORMATION FROM THE FORM AND REMOVE THE FORM
-        let username = document.getElementById("username").innerText;
+        let user = document.getElementById("username").innerText;
         let weekInput = document.getElementById("weekInput-start").value;
         let weekdayInput = document.getElementById("weekdayInput-start").value;
         let subjectInput = document.getElementById("subjectInput-start").value;
@@ -205,59 +205,50 @@ function addDayToTree() {
         // removing the form
         parent.removeChild(inputCollectionForm_addDay);
 
+
+
         // INSERT NEW INFORMATION INTO TREE AND USERDATABASE
         // Inserting the new information into the tree and the usersDatabase js
-        let weeks = document.getElementsByClassName("weekContainer")
-        for (week of weeks) {
-            let weekID = week.getAttribute("id");
-            let weekHeader = week.getElementsByClassName("weekHeader")[0];
-            let weekHeaderText = weekHeader.innerText;
-            if (weekHeaderText == weekInput.replace("_", " ")) {
-                // we located the week, now we locate the subject
-                let topicElements = week.getElementsByClassName("topicContainer");
-                // we select the topic by index of the input day
-                let inputDayNum = weekdayInput[weekdayInput.length - 1];
-                let topicElement = topicElements[parseInt(inputDayNum) - 1];
-                let topicID = topicElement.getAttribute("id");
+        // update topic name and notes in database
+        let weekInputNum = weekInput.match(/Week_(\d+)/)[1];
+        let weekdayInputNum = weekdayInput.match(/Day_(\d+)/)[1];
+        let weekContainerID = `weekContainer_${weekInputNum}`;
+        let topicContainerID = `topicContainer_${weekInputNum}_${weekdayInputNum}`
+        let topicElement = document.getElementById(topicContainerID)
 
-                // topicElement is the topic that has to be ammended
-                let topicElementHeader = topicElement.getElementsByClassName("topicHeader")[0];
-                topicElementHeader.innerHTML = `Day ${inputDayNum}: <a href="${urlInput}" target="_blank" rel="noopener noreferrer">${subjectInput}</a>`;
-                // update topic name and notes in database
-                usersDatabase[username]["data"][weekID][topicID]["topicName"] = subjectInput;
-                usersDatabase[username]["data"][weekID][topicID]["notes"] = notesInput;
-                // loop through exercise elements
-                let topicElementExercises = topicElement.getElementsByClassName("exercise");
-                for (let i = 0; i < topicElementExercises.length; i++) {
-                    let exerciseElement = topicElementExercises[i];
-                    let exerciseName = exerciseNames[i];
-                    exerciseName = exerciseName.replace("_", " ");
-                    let exerciseBoolean = checkboxValues[i];
-                    // populate exercise with info if boolean is true, or delete if false
-                    if (exerciseBoolean == true) {
-                        exerciseElement.innerText = exerciseName.replace("_", " ");
-                        try {
-                            exerciseElement.classList.remove("active");
-                        } catch {}
-                        exerciseElement.classList.add("active");
-                        exerciseElement.style.border = "solid 3px";
-                        exerciseElement.style.borderColor = "red"
-                        exerciseElement.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
-                        // add/update the exercise in database
-                        usersDatabase[username]["data"][weekID][topicID]["exercises"][exerciseNames[i]] = "red";
-                    } else if (exerciseBoolean == false) {
-                        exerciseElement.classList.remove("active");
-                        exerciseElement.style.border = "";
-                        exerciseElement.style.background.color = "";
-                        exerciseElement.innerText = "";
-                        // remove the exercise in database
-                        delete usersDatabase[username]["data"][weekID][topicID]["exercises"][exerciseNames[i]]
-                    }
-                    calculateScoresForProgressBar()
-                }
+        // topicElement is the topic that has to be ammended
+        let topicElementHeader = topicElement.getElementsByClassName("topicHeader")[0];
+        topicElementHeader.innerHTML = `Day ${weekdayInputNum}: <a href="${urlInput}" target="_blank" rel="noopener noreferrer">${subjectInput}</a>`;
+
+        // creating sub-objects in database if such do not exist
+        if (!(weekContainerID in usersDatabase[user]["data"])) {
+            usersDatabase[user]["data"][weekContainerID] = {};
+        }
+        if (!(topicContainerID in usersDatabase[user]["data"][weekContainerID])) {
+            usersDatabase[user]["data"][weekContainerID][topicContainerID] = {};
+        }
+        if (!("exercises" in usersDatabase[user]["data"][weekContainerID])) {
+            usersDatabase[user]["data"][weekContainerID][topicContainerID]["exercises"] = {};
+        }
+
+        // saving subjectInput and notesInput
+        usersDatabase[user]["data"][weekContainerID][topicContainerID]["topicName"] = subjectInput;
+        usersDatabase[user]["data"][weekContainerID][topicContainerID]["notes"] = notesInput;
+        // saving exercise input
+        let topicElementExercises = topicElement.getElementsByClassName("exercise");
+        for (let i = 0; i < topicElementExercises.length; i++) {
+            let exerciseName = exerciseNames[i];
+            exerciseName = exerciseName.replace("_", " ");
+            let exerciseBoolean = checkboxValues[i];
+            // populate exercise with info if boolean is true, or delete if false
+            if (exerciseBoolean == true) {
+                usersDatabase[user]["data"][weekContainerID][topicContainerID]["exercises"][exerciseNames[i]] = "red";
+            } else if (exerciseBoolean == false) {
+                delete usersDatabase[user]["data"][weekContainerID][topicContainerID]["exercises"][exerciseNames[i]]
             }
         }
         saveUsersDatabase(usersDatabase)
+        refreshWeekTree();
     }
     startMyDayButton.addEventListener("click", insertTopicInputIntoTree);
 }
@@ -337,7 +328,7 @@ function removeDayFromTree() {
 
 
     // APPEND THE FORM TO A PARENT (function argument)
-    parent.appendChild(inputCollectionForm_removeDay);
+    parent.prepend(inputCollectionForm_removeDay);
 
 
 
@@ -348,38 +339,26 @@ function removeDayFromTree() {
         event.preventDefault();
 
         // COLLECT INFORMATION FROM THE FORM AND REMOVE THE FORM
-        let username = document.getElementById("username").innerText;
+        let user = document.getElementById("username").innerText;
         let weekInput = document.getElementById("weekInput-start").value;
         let weekdayInput = document.getElementById("weekdayInput-start").value;
+
+        let weekInputNum = weekInput.match(/Week_(\d+)/)[1];
+        let weekdayInputNum = weekdayInput.match(/Day_(\d+)/)[1];
+        let weekContainerID = `weekContainer_${weekInputNum}`;
+        let topicContainerID = `topicContainer_${weekInputNum}_${weekdayInputNum}`
+        let topicElement = document.getElementById(topicContainerID)
+
 
         // removing the form
         parent.removeChild(inputCollectionForm_removeDay);
 
-
-
-
-        // REMOVE INFORMATION FROM TREE AND USERDATABASE
+        // REMOVE INFORMATION FROM THE USERDATABASE
         // Inserting the new information into the tree and the usersDatabase js
-        let weeks = document.getElementsByClassName("weekContainer");
-        for (week of weeks) {
-            let weekID = week.getAttribute("id");
-            let weekHeader = week.getElementsByClassName("weekHeader")[0];
-            let weekHeaderText = weekHeader.innerText;
-            if (weekHeaderText == weekInput.replace("_", " ")) {
-                // we located the week, now we locate the subject
-                let topicElements = week.getElementsByClassName("topicContainer");
-                // we select the topic by index of the input day
-                let inputDayNum = weekdayInput[weekdayInput.length - 1];
-                let topicElement = topicElements[parseInt(inputDayNum) - 1];
-                let topicID = topicElement.getAttribute("id");
-
-                delete usersDatabase[username]["data"][weekID][topicID];
-                refreshWeekTree(weeks, user);
-                calculateScoresForProgressBar();
-            }
-        }
+        delete usersDatabase[user]["data"][weekContainerID][topicElement];
     }
-    saveUsersDatabase(usersDatabase)
+    saveUsersDatabase(usersDatabase);
+    refreshWeekTree();
     removeDayButton.addEventListener("click", removeTopicFromTree);
 }
 

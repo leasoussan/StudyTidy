@@ -3,6 +3,7 @@ function refreshWeekTree() {
     clearWeekTree();
     createWeeks(usersDatabase);
     populateWeekTreeWithContent(usersDatabase[document.getElementById("username").innerText]["data"]);
+    calculateScoresForProgressBar();
 }
 
 function clearWeekTree() {
@@ -91,6 +92,20 @@ function createWeeks(usersDatabase) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function populateWeekTreeWithContent(topicsObject) {
     let weekContainers = document.getElementsByClassName("weekContainer");
 
@@ -123,35 +138,135 @@ function populateWeekTreeWithContent(topicsObject) {
                 // loop through exercises and populate them
                 let pElements = currentTopicContainer.getElementsByTagName("p");
                 for (let i = 0; i < pElements.length; i++) {
-                    let current_pEelement = pElements[i];
+                    let current_pElement = pElements[i];
                     let current_exerciseName = exerciseNames[i];
                     let borderColor = exercises[current_exerciseName];
                     if (typeof(borderColor) != "undefined") {
                         // setting exercise style
                         if (borderColor == "green") {
-                            current_pEelement.style.border = "solid 3px";
-                            current_pEelement.style.borderColor = `green`;
-                            current_pEelement.style.backgroundColor = `rgba(0, 128, 0, 0.2)`;
+                            current_pElement.style.border = "solid 3px";
+                            current_pElement.style.borderColor = `green`;
+                            current_pElement.style.backgroundColor = `rgba(0, 128, 0, 0.2)`;
                         } else if (borderColor == "yellow") {
-                            current_pEelement.style.border = "solid 3px";
-                            current_pEelement.style.borderColor = `yellow`;
-                            current_pEelement.style.backgroundColor = `rgba(255, 255, 0, 0.2)`;
+                            current_pElement.style.border = "solid 3px";
+                            current_pElement.style.borderColor = `yellow`;
+                            current_pElement.style.backgroundColor = `rgba(255, 255, 0, 0.2)`;
                         } else if (borderColor == "orange") {
-                            current_pEelement.style.border = "solid 3px";
-                            current_pEelement.style.borderColor = `orange`;
-                            current_pEelement.style.backgroundColor = `rgba(255, 165, 0, 0.2)`;
+                            current_pElement.style.border = "solid 3px";
+                            current_pElement.style.borderColor = `orange`;
+                            current_pElement.style.backgroundColor = `rgba(255, 165, 0, 0.2)`;
                         } else if (borderColor == "red") {
-                            current_pEelement.style.border = "solid 3px";
-                            current_pEelement.style.borderColor = `red`;
-                            current_pEelement.style.backgroundColor = `rgba(255, 0, 0, 0.2)`;
+                            current_pElement.style.border = "solid 3px";
+                            current_pElement.style.borderColor = `red`;
+                            current_pElement.style.backgroundColor = `rgba(255, 0, 0, 0.2)`;
                         }
                         // setting exercise name
-                        current_pEelement.innerText = current_exerciseName.replace("_", " ");
+                        current_pElement.innerText = current_exerciseName.replace("_", " ");
                         // setting exercise class to active
-                        current_pEelement.classList.add("active");
+                        current_pElement.classList.add("active");
                     }
                 }
             } catch {}
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// set color for progress bar elements according colors in topic tree
+function calculateScoresForProgressBar() {
+    let weekContainers = document.getElementsByClassName("weekContainer")
+    let arrayOfweekScores = []
+
+    // looping through week containers
+    for (week of weekContainers) {
+        let topicContainers = week.getElementsByClassName("topicContainer")
+        let topicScores = []
+
+        // looping through topic containers
+        for (topic of topicContainers) {
+            let exerciseElements = topic.getElementsByClassName("exercise")
+            let numberOfExercisesWithContent = 0
+            let topicScore = 0;
+
+            // looping through exercise elements and collecting scores
+            for (let i = 0; i < exerciseElements.length; i++) {
+                let currentExercise = exerciseElements[i]
+
+                if (currentExercise.style.borderColor == "red") {
+                    topicScore += 0;
+                    numberOfExercisesWithContent++;
+                } else if (currentExercise.style.borderColor == "orange") {
+                    topicScore += 0.25;
+                    numberOfExercisesWithContent++;
+
+                } else if (currentExercise.style.borderColor == "yellow") {
+                    topicScore += 0.6;
+                    numberOfExercisesWithContent++;
+
+                } else if (currentExercise.style.borderColor == "green") {
+                    topicScore += 1;
+                    numberOfExercisesWithContent++;
+                } else {}
+            }
+
+            // replacing NaN values with 0
+            let topicScorePercentage = topicScore / numberOfExercisesWithContent
+            if (topicScorePercentage != topicScorePercentage) {
+                topicScorePercentage = 0;
+            }
+            topicScores.push(topicScorePercentage);
+        }
+        // Week average calculation
+        // computing the sum for the week
+        let weekSum = 0;
+        for (topic of topicScores) {
+            weekSum += topic;
+        }
+        // computing the average for the week
+        let weekAverage = weekSum / topicScores.length;
+        arrayOfweekScores.push(weekAverage);
+    }
+
+    // assigning background style for the progressbar in increments of 10% (red-yellow-green gradient)
+    let progressBarElements = document.getElementsByClassName("progress-bar-element");
+    for (let i = 0; i < arrayOfweekScores.length; i++) {
+        let currentBarElement = progressBarElements[i];
+        let currentBarPercentage = arrayOfweekScores[i];
+        // console.log(currentBarPercentage);
+        if (currentBarPercentage < 0.1) {
+            currentBarElement.style.backgroundColor = "#E50000";
+        } else if ((currentBarPercentage >= 0.1) && (currentBarPercentage < 0.2)) {
+            currentBarElement.style.backgroundColor = "#DE2900";
+        } else if ((currentBarPercentage >= 0.2) && (currentBarPercentage < 0.3)) {
+            currentBarElement.style.backgroundColor = "#D74F01";
+        } else if ((currentBarPercentage >= 0.3) && (currentBarPercentage < 0.4)) {
+            currentBarElement.style.backgroundColor = "#D17301";
+        } else if ((currentBarPercentage >= 0.4) && (currentBarPercentage < 0.5)) {
+            currentBarElement.style.backgroundColor = "#CA9402";
+        } else if ((currentBarPercentage >= 0.5) && (currentBarPercentage < 0.6)) {
+            currentBarElement.style.backgroundColor = "#C4B203";
+        } else if ((currentBarPercentage >= 0.6) && (currentBarPercentage < 0.7)) {
+            currentBarElement.style.backgroundColor = "#ABBD03";
+        } else if ((currentBarPercentage >= 0.7) && (currentBarPercentage < 0.8)) {
+            currentBarElement.style.backgroundColor = "#85B603";
+        } else if ((currentBarPercentage >= 0.8) && (currentBarPercentage < 0.9)) {
+            currentBarElement.style.backgroundColor = "#61B004";
+        } else if ((currentBarPercentage >= 0.8) && (currentBarPercentage < 0.9)) {
+            currentBarElement.style.backgroundColor = "#3FA904";
+        } else {
+            currentBarElement.style.backgroundColor = "#21A205"
         }
     }
 }

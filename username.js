@@ -1,1 +1,0 @@
-let currentUserName = localStorage["username"]
