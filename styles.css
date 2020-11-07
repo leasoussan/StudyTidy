@@ -61,7 +61,6 @@
     margin: 10px 5px;
     display: flex;
     flex-direction: row;
-   
 }
 
 .main-page-left-bar {
@@ -142,7 +141,6 @@
 }
 
 .main-page-side-bar {
-  
     margin: 5px;
     width: 30%;
     padding: 5px;
@@ -171,13 +169,10 @@
     display: flex;
     justify-content: center;
     margin: auto;
-
     padding: 5px;
 }
 
-
-.weekHeader{
- 
+.weekHeader {
     background-color: darkgray;
 }
 
@@ -202,7 +197,6 @@
 
 .info-collection {
     padding: 5px;
-    
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -210,13 +204,11 @@
 
 .info-collection-left-side {
     width: 70%;
-  
     background-color: white;
 }
 
 .info-collection-notes {
     width: 30%;
-   
     background-color: white;
 }
 
@@ -306,7 +298,6 @@
     margin-top: 50px;
     justify-content: start;
     height: 200px;
-    
 }
 
 .notes_section {
@@ -318,8 +309,8 @@
 }
 
 .noteButton_Button {
-margin-top: 20px;    
-visibility: hidden;
+    margin-top: 20px;
+    visibility: hidden;
 }
 
 .noteButton_i {
