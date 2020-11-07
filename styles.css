@@ -1,12 +1,12 @@
 .body{
-    background-color: #e0ebeb;
+    /* background-color: #e0ebeb; */
 
 }
 
 .page-space {
     max-width: 90%;
     margin: auto;
-    background-color: #e0ebeb;
+   
 }
 
 #background {
@@ -14,7 +14,7 @@
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100px;
+    height: 40px;
     align-content: center;
     padding: 25px;
 }
@@ -38,9 +38,8 @@
     margin: auto;
     height: 20px;
     width: 95%;
-    background-color: lightskyblue;
-    border: black solid 1px;
-    margin-top: 20px;
+    margin-top: 10px;
+    background-color: ivory;
 }
 
 @media only screen and (max-width: 800px) {
@@ -56,38 +55,52 @@
   }
 
 .main-page {
-    background-color:e6fff7;
+    background-color: #e0ebeb;
     display: flex;
     flex-direction: row;
-   
+    margin-top: 20px;
 }
 
 .main-page-left-bar {
     display: flex;
     flex-direction: column;
-    
-    margin: 10px;
+    margin: auto;
     width: 70%;
-   justify-content: center;
-   float: inline-end;
-    height: 95%;
+    margin-left: 40px;
+    height: 100%;
+    align-items: center;
 }
 
 
 
+@media only screen and (max-width: 900px) {
+    .main-page-left-bar {
+      width: 50%;
+    }
+  }
+
+@media only screen and (max-width: 500px) {
+    .main-page-left-bar {
+      width: 90%;
+    }
+  }
+
 
 .notes-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
     height: 90%;
+
 }
 
 .drop-box-container {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    /* background-color:  #e6ffe6; */
-    align-content: center;
-
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
 }
 
 #drop-box-1{
@@ -111,12 +124,14 @@
 
 
 .drop-box {
-    width: 45%;
-    height: 50px;
-    margin: 5px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    border: solid black 10px;
 }
 
 #drop-box-1 {
+    
     border: green solid 3px;
     background-color: green;
 }
@@ -137,11 +152,13 @@
 }
 
 .main-page-side-bar {
-  
-    margin: 5px;
     width: 30%;
-    padding: 5px;
+    margin: 3px;
+    background-color: ivory;
+    height: 100vh;
 }
+
+
 
 .loging-bar {
     display: flex;
@@ -149,7 +166,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 3px;
 }
 
 #avatar {
@@ -172,13 +189,22 @@
 
 
 .weekHeader{
- 
-    background-color: darkgray;
+    background-color: #476b6b;
+    padding: 3px;
+    color: ivory;
+}
+.topicHeader{
+    background-color:  #85adad;
+    color: lavender;
+    padding: 4px;
 }
 
+.topicHeader a {
+    color: lavender;
+}
 .weeks-container {
     overflow: scroll;
-    max-height: 90vh;
+    max-height: 100vh;
 }
 
 .weekContainer {
@@ -254,6 +280,14 @@
     margin: 5px;
     padding: 5px;
     border: solid black 1px;
+
+}
+
+#inputCollectionForm_addDay{
+    margin-top: 30px;
+    width: 80%;
+    background-color: ivory;
+    border: dotted  #141f1f 5px;
 }
 
 .tooltip {
@@ -298,24 +332,22 @@
 
 .notes_section_div {
     display: flex;
-    width: 100%;
-    margin-top: 50px;
-    justify-content: start;
-    height: 200px;
-    
-}
-
-.notes_section {
-    width: 85%;
-    height: 75%;
-    margin: auto;
-    justify-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 400px;
+    align-content: center;
     justify-content: center;
 }
 
+.notes_section {
+    width: 90%;
+    height: 75%;
+ 
+}
+
 .noteButton_Button {
-margin-top: 20px;    
-visibility: hidden;
+   
+    visibility: hidden;
 }
 
 .noteButton_i {
@@ -336,3 +368,42 @@ visibility: hidden;
     visibility: visible;
     background-color: RoyalBlue;
 }
+
+.noteButton{
+    margin-left: 20px;
+    margin-bottom: 10px;
+
+}
+
+.saveNotesButton{
+    margin-top: 20px;
+    width: 100px;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .main-page-left-bar {
+      width: 50%;
+    }
+    .main-page-side-bar {
+        width: 50%;
+      }
+  }
+
+  
+@media only screen and (max-width: 500px) {
+    .main-page-left-bar {
+      width: 90%;
+    }
+
+  }
+
+
+@media only screen and (max-width: 500px) {
+    .main-page-side-bar {
+        width: 100%;
+        height: 40vh;
+      }
+  }
+
