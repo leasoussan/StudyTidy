@@ -43,7 +43,7 @@
                         </h3>
                     </div>
                     <div class="switch-user-button">
-                        <button onclick="switchUser()">Switch Account</button>
+                        <button id="switchUserButton">Switch Account</button>
                     </div>
                 </div>
 
@@ -64,10 +64,10 @@
             <section class="main-page-left-bar">
 
                 <div class="drop-box-container">
-                    <div class="drop-box" id="drop-box-1" style="background-color: green; border: 2px solid rgb(0, 75, 0)">Completed</div>
-                    <div class="drop-box" id="drop-box-2" style="background-color: yellow; border: 2px solid rgb(141, 141, 0)">Largely Done</div>
-                    <div class="drop-box" id="drop-box-3" style="background-color: orange; border: 2px solid rgb(141, 92, 0)">Barely Started</div>
-                    <div class="drop-box" id="drop-box-4" style="background-color: red; border: 2px solid rgb(128, 0, 0)">Untouched</div>
+                    <div class="drop-box" id="drop-box-1">Completed</div>
+                    <div class="drop-box" id="drop-box-2">Largely Done</div>
+                    <div class="drop-box" id="drop-box-3">Barely Started</div>
+                    <div class="drop-box" id="drop-box-4">Untouched</div>
 
                 </div>
                 <div class="notes_section_div">
@@ -81,6 +81,9 @@
                     <button class="addDayButton" id="addDayButton">
                         Add Day
                     </button>
+                    <button class="removeDayButton" id="removeDayButton">
+                        Remove Day
+                    </button>
                 </div>
 
                 <div class="weeks-container" id="weeks-container">
@@ -91,24 +94,27 @@
     </div>
     <script src="username.js"></script>
     <script src="changeUserNameInHtml.js"></script>
-    <script src="userDatabase.js"></script>
+    <script src="usersDatabaseFunctions.js"></script>
     <script>
-        // temporary, remove or move later
-        let user = document.getElementById("username").innerText
-        let weeks = usersDatabase[user]["weeks"]
         let exerciseNames = ["Practice", "XP", "XP_Gold", "XP_Ninja", "Daily_Challenge", "Mini_Project"];
     </script>
     <script src="drag-and-drop.js"></script>
     <script src="progress-bar.js"></script>
-    <script src="progress-bar-score.js"></script>
     <script src="tree-week-creation.js"></script>
     <script src="add-notes-button.js"></script>
-    <script src="tree-topic-population.js"></script>
     <script src="form-creation.js"></script>
     <script src="switchuser.js"></script>
 
     <script>
-        calculateScoresForProgressBar()
+        // populating the page and adding functionality
+        makeSwitchUserButtonClickable();
+        refreshWeekTree();
+        createProgressBarElements();
+        makeProgressBarWeeksClickable();
+        addDragAndDropFunctionality();
+        makeAddDayButtonClickable();
+        makeRemoveDayButtonClickable();
+        calculateScoresForProgressBar();
     </script>
 
 </body>

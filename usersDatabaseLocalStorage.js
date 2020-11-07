@@ -1,5 +1,4 @@
-let usersDatabase = {
-
+localStorage.setItem("usersDatabase", JSON.stringify({
     lola: {
         username: "lola",
         password: "123456",
@@ -307,4 +306,4 @@ let usersDatabase = {
             }
         }
     }
-}
+}))

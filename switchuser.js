@@ -1,10 +1,8 @@
-
-
-function switchUser(event){
-    location.href = "user.html";
-
+function makeSwitchUserButtonClickable() {
+    let switchUserButton = document.getElementById("switchUserButton");
+    switchUserButton.addEventListener("click", goToUserHTML);
 };
 
-
-
-
+function goToUserHTML(event) {
+    location.href = "user.html";
+}

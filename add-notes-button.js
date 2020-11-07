@@ -11,12 +11,11 @@ function addNotesButton(topicHeaderDiv) {
     topicHeaderDiv.appendChild(notesButton)
 
     notesButton.addEventListener("click", notesButtonClick)
-
 }
 
 function notesButtonClick(event) {
     event.preventDefault();
-    console.log("event: ", event);
+    let usersDatabase = retrieveUsersDatabase();
     let buttonID = event.target.id;
     let buttonElement = document.getElementById(buttonID);
     buttonElement.classList.add("notesButtonActivated");
@@ -33,13 +32,14 @@ function notesButtonClick(event) {
     // add event listener to save notes button
     let saveNotesButton = document.getElementById("saveNotesButton");
     saveNotesButton.addEventListener("click", saveNotesButtonClick);
+    console.log("notesButtonClick");
 }
 
 
 function saveNotesButtonClick(event) {
     event.preventDefault();
+    usersDatabase = retrieveUsersDatabase();
     let notesButtonElement = document.getElementsByClassName("notesButtonActivated")[0];
-    console.log("notesButtonElement: ", notesButtonElement);
     let notesButtonID = notesButtonElement.getAttribute("id");
     let reg = /(?<=noteButton_)(\d+)_(\d+)/
     let weekNum = notesButtonID.match(reg)[1];
@@ -53,6 +53,8 @@ function saveNotesButtonClick(event) {
     usersDatabase[username]["data"][weekID][topicID]["notes"] = notesToSave;
     saveNotesButton.removeEventListener("click", saveNotesButtonClick);
     notesButtonElement.classList.remove("notesButtonActivated");
+    saveUsersDatabase(usersDatabase);
+    console.log("saveNotesButtonClick");
 }
 
 
@@ -60,4 +62,5 @@ function removeNotesButton(topicHeaderDiv) {
     let notesButtonElement = topicHeaderDiv.getElementsByClassName(noteButton_Button)[0];
     notesButtonElement.removeEventListener(notesButtonClick);
     topicHeaderDiv.removeChild(notesButtonElement);
+    console.log("--- removeNotesButton done")
 }

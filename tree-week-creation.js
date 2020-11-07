@@ -1,20 +1,29 @@
-// NOTE TO SELF: This function will activate whenever the page is 
-// loaded (or user switches etc). It creates all the weeks, but creates
-// only the topics that exist for the week
-// It gets the data from an object that also has border colors (super important)
+function refreshWeekTree() {
+    usersDatabase = retrieveUsersDatabase();
+    clearWeekTree();
+    createWeeks(usersDatabase);
+    populateWeekTreeWithContent(usersDatabase[document.getElementById("username").innerText]["data"]);
+}
 
+function clearWeekTree() {
+    user = document.getElementById("username").innerText;
+    weeks = usersDatabase[user]["weeks"];
+    let parent = document.getElementById("weeks-container");
 
-
-//getting the number of week from the Database:
-
-// let weeks = usersDatabase[user]["weeks"];
-
-
-
-function createWeeks(weeks) {
-    let weeksContainer = document.getElementById("weeks-container");
-    // create week continers for however many weeks the user has
     for (let i = 0; i < weeks; i++) {
+        try {
+            parent.removeChild(parent.firstChild);
+        } catch {}
+    };
+
+}
+
+function createWeeks(usersDatabase) {
+    user = document.getElementById("username").innerText;
+    weeks = usersDatabase[user]["weeks"]
+    let weeksContainer = document.getElementById("weeks-container");
+    // create week containers for however many weeks the user has
+    for (i = 0; i < weeks; i++) {
         // create week container
         let weekContainer = document.createElement("div");
         weekContainer.setAttribute("id", `weekContainer_${i+1}`);
@@ -60,8 +69,6 @@ function createWeeks(weeks) {
             topicHeader.setAttribute("class", "topicHeader");
             topicHeaderDiv.appendChild(topicHeader);
 
-
-
             topicContainer.appendChild(topicHeaderDiv);
 
             //add the 7 exercises
@@ -83,4 +90,68 @@ function createWeeks(weeks) {
     }
 }
 
-createWeeks(weeks);
+
+function populateWeekTreeWithContent(topicsObject) {
+    let weekContainers = document.getElementsByClassName("weekContainer");
+
+    // looping through weekContainers
+    for (let i = 0; i < weekContainers.length; i++) {
+        let weekContainer = weekContainers[i];
+        let weekContainerID = weekContainer.id;
+
+        // locating the topics within the weekContainer (5 topics)
+        let topicContainers = weekContainer.getElementsByClassName("topicContainer");
+
+        // loop through topicContainers
+        for (let i = 0; i < topicContainers.length; i++) {
+            // locate the current topic container and ID
+            let currentTopicContainer = topicContainers[i];
+            let currentTopicContainerID = currentTopicContainer.id;
+            // if exists find the current topic container in the data object
+            try {
+                let topicName = topicsObject[weekContainerID][currentTopicContainerID]["topicName"];
+                let exercises = topicsObject[weekContainerID][currentTopicContainerID]["exercises"];
+
+                let link = topicsObject[weekContainerID][currentTopicContainerID]["url"];
+
+                // topic text and button
+                let topicHeader = currentTopicContainer.getElementsByClassName("topicHeader")[0];
+                topicHeader.innerHTML = `Day ${i+1}: <a href="${link}" target="_blank" rel="noopener noreferrer">${topicName}</a>`;
+                topicHeaderDiv = currentTopicContainer.getElementsByClassName("topicHeaderDiv")[0]
+                addNotesButton(topicHeaderDiv);
+
+                // loop through exercises and populate them
+                let pElements = currentTopicContainer.getElementsByTagName("p");
+                for (let i = 0; i < pElements.length; i++) {
+                    let current_pEelement = pElements[i];
+                    let current_exerciseName = exerciseNames[i];
+                    let borderColor = exercises[current_exerciseName];
+                    if (typeof(borderColor) != "undefined") {
+                        // setting exercise style
+                        if (borderColor == "green") {
+                            current_pEelement.style.border = "solid 3px";
+                            current_pEelement.style.borderColor = `green`;
+                            current_pEelement.style.backgroundColor = `rgba(0, 128, 0, 0.2)`;
+                        } else if (borderColor == "yellow") {
+                            current_pEelement.style.border = "solid 3px";
+                            current_pEelement.style.borderColor = `yellow`;
+                            current_pEelement.style.backgroundColor = `rgba(255, 255, 0, 0.2)`;
+                        } else if (borderColor == "orange") {
+                            current_pEelement.style.border = "solid 3px";
+                            current_pEelement.style.borderColor = `orange`;
+                            current_pEelement.style.backgroundColor = `rgba(255, 165, 0, 0.2)`;
+                        } else if (borderColor == "red") {
+                            current_pEelement.style.border = "solid 3px";
+                            current_pEelement.style.borderColor = `red`;
+                            current_pEelement.style.backgroundColor = `rgba(255, 0, 0, 0.2)`;
+                        }
+                        // setting exercise name
+                        current_pEelement.innerText = current_exerciseName.replace("_", " ");
+                        // setting exercise class to active
+                        current_pEelement.classList.add("active");
+                    }
+                }
+            } catch {}
+        }
+    }
+}

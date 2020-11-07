@@ -1,38 +1,54 @@
 let loginButton = document.getElementById("button")
 
-
-
-
 loginButton.addEventListener("click", logIn)
 
 function logIn(event) {
     event.preventDefault()
-        // alert("you try to log in")
-    let userName = document.getElementById("username").value
-    let passWord = document.getElementById("password").value
+    usersDatabase = retrieveUsersDatabase();
+    let userName;
+    let passWord;
 
-    // usersDatabase[username]
-    //beacuse we are in an object = we can't loop so we give conditional
-    if (typeof(userName) == "undefined") {
-        alert("you are not registered")
-    } else {
-        if (usersDatabase[userName]["password"] == passWord) {
-          localStorage["username"] = userName;  
-          location.href = "index.html";
-          } 
+    try {
+        userName = document.getElementById("username").value
+    } catch {}
+    try {
+        passWord = document.getElementById("password").value
+    } catch {};
 
-      }     
-    } 
-    
+    // if username is empty
+    if (userName.length == 0) {
+        alert("Username field cannot be empty.");
+        return
+    }
+    // if password is empty
+    if (passWord.length == 0) {
+        alert("Password field cannot be empty.");
+        return
+    }
+
+    // testing the username and password pair
+    let tryUsernameAndPassword;
+    try {
+        tryUsernameAndPassword = usersDatabase[userName]["password"];
+        if (typeof(tryUsernameAndPassword) == "undefined") {
+            alert("Incorrect data entered.");
+            return
+        }
+    } catch {
+        alert("Incorrect data entered.");
+        return
+    }
 
 
-    
-      
-  
+    // if username and password are both correct
+    if (usersDatabase[userName]["password"] == passWord) {
+        localStorage["username"] = userName;
+        location.href = "index.html";
+    }
 
-
-
-    // if (usersDatabase[userName]["password"] > data[0]){
-    //   console.log(usersDatabase[userName]["data"])}
-    //   else{ createForm() 
-    //   }
+    // if the username is correct but password is not
+    else {
+        alert("Incorrect Password");
+        return
+    }
+}

@@ -77,6 +77,26 @@
     margin: 5px;
 }
 
+#drop-box-1 {
+    border: green solid 3px;
+    background-color: green;
+}
+
+#drop-box-2 {
+    border: yellow solid 3px;
+    background-color: yellow;
+}
+
+#drop-box-3 {
+    border: orange solid 3px;
+    background-color: orange;
+}
+
+#drop-box-4 {
+    border: red solid 3px;
+    background-color: red;
+}
+
 .main-page-side-bar {
     border: black solid 1px;
     background-color: white;
