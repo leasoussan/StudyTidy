@@ -1,8 +1,7 @@
 function refreshWeekTree() {
-    usersDatabase = retrieveUsersDatabase();
     clearWeekTree();
-    createWeeks(usersDatabase);
-    populateWeekTreeWithContent(usersDatabase[currentUserName]["data"]);
+    createWeeks();
+    populateWeekTreeWithContent();
 }
 
 
@@ -12,6 +11,7 @@ function refreshWeekTree() {
 
 function clearWeekTree() {
     user = document.getElementById("username").innerText;
+    usersDatabase = retrieveUsersDatabase();
     weeks = usersDatabase[user]["weeks"];
     let parent = document.getElementById("weeks-container");
 
@@ -28,8 +28,9 @@ function clearWeekTree() {
 
 
 
-function createWeeks(usersDatabase) {
+function createWeeks() {
     user = document.getElementById("username").innerText;
+    usersDatabase = retrieveUsersDatabase();
     weeks = usersDatabase[user]["weeks"]
     let weeksContainer = document.getElementById("weeks-container");
     // create week containers for however many weeks the user has
@@ -115,7 +116,10 @@ function createWeeks(usersDatabase) {
 
 
 
-function populateWeekTreeWithContent(topicsObject) {
+function populateWeekTreeWithContent() {
+    user = document.getElementById("username").innerText;
+    usersDatabase = retrieveUsersDatabase();
+    let topicsObject = usersDatabase[user]["data"]
     let weekContainers = document.getElementsByClassName("weekContainer");
 
     // looping through weekContainers

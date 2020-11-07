@@ -76,7 +76,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "lola's notes, topicContainer_2_1",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_2: {
                     topicName: "Learning Conditionals",
@@ -88,7 +88,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "lola's notes, topicContainer_2_2",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_3: {
                     topicName: "Learning Loops",
@@ -101,7 +101,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_4: {
                     topicName: "Learning Functions",
@@ -114,7 +114,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_5: {
                     topicName: "Mini-Project Day",
@@ -127,7 +127,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
 
                 }
             }
@@ -150,7 +150,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "green"
                     },
                     notes: "jean's notes, topicContainer_1_1",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_1_2: {
                     topicName: "CSS Basics",
@@ -160,7 +160,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "jean's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 }
             },
             weekContainer_2: {
@@ -174,7 +174,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_2: {
                     topicName: "Advanced JavaScript",
@@ -186,7 +186,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 }
             }
         }
@@ -208,7 +208,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_1_2: {
                     topicName: "CSS Basics",
@@ -218,7 +218,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 }
             },
             weekContainer_2: {
@@ -232,7 +232,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_2: {
                     topicName: "Advanced JavaScript",
@@ -244,7 +244,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 }
             }
         }
@@ -265,7 +265,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "green"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_1_2: {
                     topicName: "CSS Basics",
@@ -275,7 +275,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 }
             },
             weekContainer_2: {
@@ -289,7 +289,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 },
                 topicContainer_2_2: {
                     topicName: "Advanced JavaScript",
@@ -301,7 +301,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "red"
                     },
                     notes: "some notes",
-                    url: "www.google.com"
+                    url: "https://www.google.com/"
                 }
             }
         }

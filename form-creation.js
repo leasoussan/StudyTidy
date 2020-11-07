@@ -258,6 +258,19 @@ function addDayToTree() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 function removeDayFromTree() {
     usersDatabase = retrieveUsersDatabase()
     user = document.getElementById("username").innerText
@@ -371,20 +384,35 @@ function removeDayFromTree() {
 
 
 
+
+
+
 function makeAddDayButtonClickable() {
     let addDayButton = document.getElementById("addDayButton");
     addDayButton.addEventListener("click", addDayToTree);
 }
+
+
+
+
 
 function makeRemoveDayButtonClickable() {
     let addDayButton = document.getElementById("removeDayButton");
     addDayButton.addEventListener("click", removeDayFromTree);
 }
 
+
+
+
+
 function addDay_cancelButton(event) {
     event.preventDefault();
     document.getElementsByClassName('main-page-left-bar')[0].removeChild(document.getElementById('inputCollectionForm_addDay'))
 }
+
+
+
+
 
 function removeDay_cancelButton(event) {
     event.preventDefault();

@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 .body{
     background-color: #e0ebeb;
 
+=======
+.body {
+    background-color: #e6fff2;
+>>>>>>> d740f2a12693e6600f97de8cf1e5c6a97cdafe3d
 }
 
 .page-space {
@@ -14,6 +19,10 @@
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+<<<<<<< HEAD
+=======
+    background-color: #e6fff2;
+>>>>>>> d740f2a12693e6600f97de8cf1e5c6a97cdafe3d
     height: 100px;
     align-content: center;
     padding: 25px;
@@ -45,18 +54,24 @@
 
 @media only screen and (max-width: 800px) {
     .progress-bar {
-      width: 100%;
-  }
+        width: 100%;
+    }
+}
 
-} 
 @media only screen and (max-width: 500px) {
     .progress-bar {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
 .main-page {
+<<<<<<< HEAD
     background-color:e6fff7;
+=======
+    border: black solid 1px;
+    background-color: e6fff7;
+    margin: 10px 5px;
+>>>>>>> d740f2a12693e6600f97de8cf1e5c6a97cdafe3d
     display: flex;
     flex-direction: row;
    
@@ -65,16 +80,29 @@
 .main-page-left-bar {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     
+=======
+    border: black solid 1px;
+    background-color: #e6ffe6;
+>>>>>>> d740f2a12693e6600f97de8cf1e5c6a97cdafe3d
     margin: 10px;
     width: 70%;
-   justify-content: center;
-   float: inline-end;
+    justify-content: center;
+    float: inline-end;
     height: 95%;
 }
 
+<<<<<<< HEAD
 
 
+=======
+.notes_section_div {
+    width: 70%;
+    margin-bottom: 50px;
+    align-self: center;
+}
+>>>>>>> d740f2a12693e6600f97de8cf1e5c6a97cdafe3d
 
 .notes-input {
     width: 90%;
@@ -85,6 +113,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+<<<<<<< HEAD
     /* background-color:  #e6ffe6; */
     align-content: center;
 
@@ -105,10 +134,31 @@
 }
 #drop-box-4{
     width: 20%;
+=======
+    background-color: #e6ffe6;
+    float: inline-start;
+}
+
+#drop-box-1 {
+    width: 150px;
+    height: 150px;
+}
+
+#drop-box-2 {
+    width: 150px;
     height: 150px
 }
 
+#drop-box-3 {
+    width: 150px;
+    height: 150px
+}
 
+#drop-box-4 {
+    width: 150px;
+>>>>>>> d740f2a12693e6600f97de8cf1e5c6a97cdafe3d
+    height: 150px
+}
 
 .drop-box {
     width: 45%;
@@ -182,10 +232,9 @@
 }
 
 .weekContainer {
-    background-color:  #ebebe0;
+    background-color: #ebebe0;
     padding: 5px;
 }
-
 
 .topic-container {
     margin: 5px;

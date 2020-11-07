@@ -5,9 +5,6 @@ function registerNewUser(event) {
     let userName = document.getElementById("username").value;
     let passWord = document.getElementById("password").value;
     let weekNumber = document.getElementById("weekNumber").value;
-    console.log("userName: ", userName);
-    console.log("passWord: ", passWord);
-    console.log("weekNumber: ", weekNumber);
 
 
 

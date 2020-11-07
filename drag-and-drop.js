@@ -24,8 +24,6 @@ function allowDrop(event) {
 
 
 function dragStart(event) {
-    let exerciseBoxes = document.getElementsByClassName("exercise");
-
     // transfer the exercise id to dragDrop
     let exerciseID = event.target.id;
     event.dataTransfer.setData("id", exerciseID);
@@ -82,7 +80,6 @@ function dragDrop(event) {
 
     event.target.classList.remove('over');
     saveUsersDatabase(usersDatabase);
-    refreshWeekTree();
     calculateScoresForProgressBar();
 }
 
