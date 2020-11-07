@@ -1,6 +1,7 @@
-
 .page-space {
-    max-width: 90%;
+    max-width: 1000px;
+    width: 80%;
+    min-width: 500px;
     margin: auto;
    
 }
@@ -186,22 +187,33 @@
 
 .weekHeader{
     background-color: #476b6b;
-    padding: 3px;
+    padding: 5px;
     color: ivory;
 }
+
 .topicHeader{
+    padding: 4px;
     background-color:  #85adad;
+}
+
+.active_currentTopicContainer{
+    
     color: lavender;
     padding: 4px;
 }
 
 .topicHeader a {
     color: lavender;
+    font-size: smaller;
 }
 .weeks-container {
     overflow: scroll;
     max-height: 100vh;
 }
+
+
+
+
 
 .weekContainer {
     background-color:  #ebebe0;
@@ -282,8 +294,8 @@
 #inputCollectionForm_addDay{
     margin-top: 30px;
     width: 80%;
-    background-color: ivory;
-    border: dotted  #141f1f 5px;
+    background-color:rgba(255,255,255,0.6) ;
+    border: solid   #cccccc 2px;
 }
 
 .tooltip {
