@@ -1,3 +1,7 @@
+.body{
+    background-color:  #e6fff2;
+}
+
 .page-space {
     margin: auto;
     max-width: 1000px;
@@ -6,13 +10,14 @@
 }
 
 #background {
-    /* background-image: url("img/background.png"); */
+    background-image: url("img/background.png");
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #e6fff7;
-    height: 50px;
+    background-color:  #e6fff2;
+    height: 100px;
     align-content: center;
+    padding: 25px;
 }
 
 #username {
@@ -39,9 +44,21 @@
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 800px) {
+    .progress-bar {
+      width: 100%;
+  }
+
+} 
+@media only screen and (max-width: 500px) {
+    .progress-bar {
+      width: 100%;
+    }
+  }
+
 .main-page {
     border: black solid 1px;
-    background-color: lightskyblue;
+    background-color:e6fff7;
     margin: 10px 5px;
     display: flex;
     flex-direction: row;
@@ -50,26 +67,56 @@
 }
 
 .main-page-left-bar {
-    border: black solid 1px;
-    background-color: rgb(241, 175, 175);
-    margin: 10px 5px;
-    width: 70%;
     display: flex;
     flex-direction: column;
+    border: black solid 1px;
+    background-color:  #e6ffe6;
+    margin: 10px;
+    width: 70%;
+   justify-content: center;
+   float: inline-end;
     height: 95%;
 }
 
+
+.notes_section_div{
+    width: 70%;
+    margin-bottom: 50px;
+    align-self: center;
+}
+
 .notes-input {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 .drop-box-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: white;
+    background-color:  #e6ffe6;
+    float: inline-start;
 }
+
+#drop-box-1{
+    width: 150px;
+    height: 150px;
+}
+
+#drop-box-2{
+    width: 150px;
+    height: 150px
+}
+#drop-box-3{
+    width: 150px;
+    height: 150px
+}
+#drop-box-4{
+    width: 150px;
+    height: 150px
+}
+
+
 
 .drop-box {
     width: 45%;
@@ -99,8 +146,7 @@
 
 .main-page-side-bar {
     border: black solid 1px;
-    background-color: white;
-    margin: 10px 5px;
+    margin: 5px;
     width: 30%;
     padding: 5px;
 }
@@ -134,16 +180,17 @@
 
 .weeks-container {
     overflow: scroll;
-    max-height: 700px;
+    max-height: 90vh;
 }
 
 .weekContainer {
-    border: solid black 1px;
+    background-color:  #ebebe0;
     padding: 5px;
 }
 
+
 .topic-container {
-    margin-left: 10px;
+    margin: 5px;
 }
 
 .active {
@@ -264,8 +311,8 @@
     width: 95%;
     height: 95%;
     margin: auto;
-    justify-items: start;
-    justify-content: start;
+    justify-items: center;
+    justify-content: center;
 }
 
 .noteButton_Button {
