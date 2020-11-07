@@ -15,6 +15,12 @@ function addNotesButton(topicHeaderDiv) {
 
 function notesButtonClick(event) {
     event.preventDefault();
+    // remove "notesButtonActivated" class from all buttons if such is present
+    let buttonElements = document.getElementsByClassName("noteButton");
+    for (btn of buttonElements) {
+        btn.classList.remove("notesButtonActivated");
+    }
+    // retrieve data
     let usersDatabase = retrieveUsersDatabase();
     let buttonID = event.target.id;
     let buttonElement = document.getElementById(buttonID);
@@ -32,13 +38,13 @@ function notesButtonClick(event) {
     // add event listener to save notes button
     let saveNotesButton = document.getElementById("saveNotesButton");
     saveNotesButton.addEventListener("click", saveNotesButtonClick);
-    console.log("notesButtonClick");
 }
 
 
 function saveNotesButtonClick(event) {
     event.preventDefault();
     usersDatabase = retrieveUsersDatabase();
+    console.log(document.getElementsByClassName("notesButtonActivated"));
     let notesButtonElement = document.getElementsByClassName("notesButtonActivated")[0];
     let notesButtonID = notesButtonElement.getAttribute("id");
     let reg = /(?<=noteButton_)(\d+)_(\d+)/
@@ -50,11 +56,11 @@ function saveNotesButtonClick(event) {
     let saveNotesButton = document.getElementById("saveNotesButton");
     let notesSectionElement = document.getElementsByClassName("notes_section")[0];
     let notesToSave = notesSectionElement.value;
+    console.log("topicID: ", topicID)
     usersDatabase[username]["data"][weekID][topicID]["notes"] = notesToSave;
     saveNotesButton.removeEventListener("click", saveNotesButtonClick);
     notesButtonElement.classList.remove("notesButtonActivated");
     saveUsersDatabase(usersDatabase);
-    console.log("saveNotesButtonClick");
 }
 
 
@@ -62,5 +68,4 @@ function removeNotesButton(topicHeaderDiv) {
     let notesButtonElement = topicHeaderDiv.getElementsByClassName(noteButton_Button)[0];
     notesButtonElement.removeEventListener(notesButtonClick);
     topicHeaderDiv.removeChild(notesButtonElement);
-    console.log("--- removeNotesButton done")
 }

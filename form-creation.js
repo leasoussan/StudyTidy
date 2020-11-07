@@ -221,6 +221,9 @@ function addDayToTree() {
         topicElementHeader.innerHTML = `Day ${weekdayInputNum}: <a href="${urlInput}" target="_blank" rel="noopener noreferrer">${subjectInput}</a>`;
 
         // creating sub-objects in database if such do not exist
+        if (!("data" in usersDatabase[user])) {
+            usersDatabase[user]["data"] = {};
+        }
         if (!(weekContainerID in usersDatabase[user]["data"])) {
             usersDatabase[user]["data"][weekContainerID] = {};
         }
@@ -247,6 +250,7 @@ function addDayToTree() {
                 delete usersDatabase[user]["data"][weekContainerID][topicContainerID]["exercises"][exerciseNames[i]]
             }
         }
+        console.log("usersDatabase: ", usersDatabase)
         saveUsersDatabase(usersDatabase)
         refreshWeekTree();
     }
@@ -355,10 +359,13 @@ function removeDayFromTree() {
 
         // REMOVE INFORMATION FROM THE USERDATABASE
         // Inserting the new information into the tree and the usersDatabase js
-        delete usersDatabase[user]["data"][weekContainerID][topicElement];
+        delete usersDatabase[user]["data"][weekContainerID][topicContainerID];
+        saveUsersDatabase(usersDatabase);
+        refreshWeekTree();
+        calculateScoresForProgressBar();
+        console.log("removeTopicFromTree")
     }
-    saveUsersDatabase(usersDatabase);
-    refreshWeekTree();
+
     removeDayButton.addEventListener("click", removeTopicFromTree);
 }
 
