@@ -1,8 +1,8 @@
 function makeSwitchUserButtonClickable() {
     let switchUserButton = document.getElementById("switchUserButton");
-    switchUserButton.addEventListener("click", goToUserHTML);
+    switchUserButton.addEventListener("click", goToLoginHTML);
 };
 
-function goToUserHTML(event) {
+function goToLoginHTML(event) {
     location.href = "login.html";
 }
