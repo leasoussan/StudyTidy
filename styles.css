@@ -1,20 +1,19 @@
 .body{
-    background-color:  #e6fff2;
+    background-color: #e0ebeb;
+
 }
 
 .page-space {
+    max-width: 90%;
     margin: auto;
-    max-width: 1000px;
-    width: 100%;
-    min-width: 600px;
+    background-color: #e0ebeb;
 }
 
 #background {
-    background-image: url("img/background.png");
+    /* background-image: url("img/background.png"); */
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color:  #e6fff2;
     height: 100px;
     align-content: center;
     padding: 25px;
@@ -57,20 +56,16 @@
   }
 
 .main-page {
-    border: black solid 1px;
     background-color:e6fff7;
-    margin: 10px 5px;
     display: flex;
     flex-direction: row;
-    height: 95%;
-    max-height: 800px;
+   
 }
 
 .main-page-left-bar {
     display: flex;
     flex-direction: column;
-    border: black solid 1px;
-    background-color:  #e6ffe6;
+    
     margin: 10px;
     width: 70%;
    justify-content: center;
@@ -79,11 +74,7 @@
 }
 
 
-.notes_section_div{
-    width: 70%;
-    margin-bottom: 50px;
-    align-self: center;
-}
+
 
 .notes-input {
     width: 90%;
@@ -94,25 +85,26 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color:  #e6ffe6;
-    float: inline-start;
+    /* background-color:  #e6ffe6; */
+    align-content: center;
+
 }
 
 #drop-box-1{
-    width: 150px;
+    width: 20%;
     height: 150px;
 }
 
 #drop-box-2{
-    width: 150px;
+    width: 20%;
     height: 150px
 }
 #drop-box-3{
-    width: 150px;
+    width: 20%;
     height: 150px
 }
 #drop-box-4{
-    width: 150px;
+    width: 20%;
     height: 150px
 }
 
@@ -145,7 +137,7 @@
 }
 
 .main-page-side-bar {
-    border: black solid 1px;
+  
     margin: 5px;
     width: 30%;
     padding: 5px;
@@ -174,8 +166,14 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    border: solid black 1px;
+
     padding: 5px;
+}
+
+
+.weekHeader{
+ 
+    background-color: darkgray;
 }
 
 .weeks-container {
@@ -200,7 +198,7 @@
 
 .info-collection {
     padding: 5px;
-    border: solid black 1px;
+    
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -208,13 +206,13 @@
 
 .info-collection-left-side {
     width: 70%;
-    border: solid black 1px;
+  
     background-color: white;
 }
 
 .info-collection-notes {
     width: 30%;
-    border: solid black 1px;
+   
     background-color: white;
 }
 
@@ -299,24 +297,25 @@
 }
 
 .notes_section_div {
+    display: flex;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     justify-content: start;
     height: 200px;
-    justify-items: start;
-    background-color: white;
+    
 }
 
 .notes_section {
-    width: 95%;
-    height: 95%;
+    width: 85%;
+    height: 75%;
     margin: auto;
     justify-items: center;
     justify-content: center;
 }
 
 .noteButton_Button {
-    visibility: hidden;
+margin-top: 20px;    
+visibility: hidden;
 }
 
 .noteButton_i {
