@@ -1,5 +1,5 @@
-.body{
-    background-color:  #e6fff2;
+.body {
+    background-color: #e6fff2;
 }
 
 .page-space {
@@ -14,7 +14,7 @@
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color:  #e6fff2;
+    background-color: #e6fff2;
     height: 100px;
     align-content: center;
     padding: 25px;
@@ -46,19 +46,19 @@
 
 @media only screen and (max-width: 800px) {
     .progress-bar {
-      width: 100%;
-  }
+        width: 100%;
+    }
+}
 
-} 
 @media only screen and (max-width: 500px) {
     .progress-bar {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
 .main-page {
     border: black solid 1px;
-    background-color:e6fff7;
+    background-color: e6fff7;
     margin: 10px 5px;
     display: flex;
     flex-direction: row;
@@ -70,16 +70,15 @@
     display: flex;
     flex-direction: column;
     border: black solid 1px;
-    background-color:  #e6ffe6;
+    background-color: #e6ffe6;
     margin: 10px;
     width: 70%;
-   justify-content: center;
-   float: inline-end;
+    justify-content: center;
+    float: inline-end;
     height: 95%;
 }
 
-
-.notes_section_div{
+.notes_section_div {
     width: 70%;
     margin-bottom: 50px;
     align-self: center;
@@ -94,29 +93,29 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color:  #e6ffe6;
+    background-color: #e6ffe6;
     float: inline-start;
 }
 
-#drop-box-1{
+#drop-box-1 {
     width: 150px;
     height: 150px;
 }
 
-#drop-box-2{
-    width: 150px;
-    height: 150px
-}
-#drop-box-3{
-    width: 150px;
-    height: 150px
-}
-#drop-box-4{
+#drop-box-2 {
     width: 150px;
     height: 150px
 }
 
+#drop-box-3 {
+    width: 150px;
+    height: 150px
+}
 
+#drop-box-4 {
+    width: 150px;
+    height: 150px
+}
 
 .drop-box {
     width: 45%;
@@ -184,10 +183,9 @@
 }
 
 .weekContainer {
-    background-color:  #ebebe0;
+    background-color: #ebebe0;
     padding: 5px;
 }
-
 
 .topic-container {
     margin: 5px;

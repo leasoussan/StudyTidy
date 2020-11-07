@@ -3,23 +3,18 @@ function createProgressBarElements() {
     usersDatabase = retrieveUsersDatabase();
     user = document.getElementById("username").innerText
     let weeks = usersDatabase[user]["weeks"]
-    let childrenArray = [];
+    let parent = document.getElementById("progress-bar")
     for (let i = 0; i < weeks; i++) {
         let box = document.createElement("div");
         box.setAttribute("class", "progress-bar-element");
-        childrenArray = childrenArray.concat([box]);
-    }
-    let parent = document.getElementById("progress-bar");
-    for (let i = 0; i < childrenArray.length; i++) {
-        let child = childrenArray[i];
         let widthPerc = 1 / (weeks)
         widthPerc = Math.round(widthPerc * 100, 0);
-        child.style.width = `${widthPerc}%`;
-        child.style.heigth = "95%";
-        child.setAttribute("id", `progress-bar-element-${i+1}`)
-        child.innerText = `Week ${i+1}`;
-        child.style.fontSize = "14px";
-        parent.appendChild(child);
+        box.style.width = `${widthPerc}%`;
+        box.style.heigth = "95%";
+        box.setAttribute("id", `progress-bar-element-${i+1}`)
+        box.innerText = `Week ${i+1}`;
+        box.style.fontSize = "14px";
+        parent.appendChild(box);
     }
 }
 
