@@ -1,7 +1,7 @@
 localStorage.setItem("usersDatabase", JSON.stringify({
     lola: {
         username: "lola",
-        password: "123456",
+        password: "123",
         weeks: 10,
         data: {
             weekContainer_1: {
@@ -16,7 +16,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "green"
                     },
                     notes: "lola's notes, topicContainer_1_1",
-                    url: "http://www.google.com"
+                    url: "http://learn.di-learning.com/courses/collection/18/course/9/section/14"
                 },
                 topicContainer_1_2: {
                     topicName: "Git And Github",
@@ -27,7 +27,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "green"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "http://learn.di-learning.com/courses/collection/18/course/9/section/15"
                 },
                 topicContainer_1_3: {
                     topicName: "CSS Grid + CSS Layout",
@@ -38,7 +38,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "http://learn.di-learning.com/courses/collection/18/course/9/section/17"
                 },
                 topicContainer_1_4: {
                     topicName: "Bootstrap",
@@ -51,7 +51,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "http://learn.di-learning.com/courses/collection/18/course/9/section/16"
                 },
                 topicContainer_1_5: {
                     topicName: "Coding Day",
@@ -62,7 +62,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
                         Mini_Project: "yellow"
                     },
                     notes: "lola's notes, topicContainer_1_2",
-                    url: "www.google.com"
+                    url: "http://learn.di-learning.com/courses/collection/18/course/9/section/18"
                 }
             },
             weekContainer_2: {
@@ -136,7 +136,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
 
     jean: {
         username: "jean",
-        password: "123456",
+        password: "123",
         weeks: 14,
         data: {
             weekContainer_1: {
@@ -194,7 +194,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
 
     doris: {
         username: "Doris",
-        password: "123456",
+        password: "123",
         weeks: 5,
         data: {
             weekContainer_1: {
@@ -251,7 +251,7 @@ localStorage.setItem("usersDatabase", JSON.stringify({
     },
     miro: {
         username: "miro",
-        password: "123456",
+        password: "123",
         weeks: 8,
         data: {
             weekContainer_1: {

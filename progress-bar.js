@@ -24,6 +24,9 @@ function createProgressBarElements() {
 }
 
 
+
+
+
 // make progress bar elements clickable, calling function scrollToWeekElementInTree
 function makeProgressBarWeeksClickable() {
     let progressBarWeekElements = document.getElementsByClassName("progress-bar-element");
@@ -33,6 +36,10 @@ function makeProgressBarWeeksClickable() {
     }
 }
 
+
+
+
+
 // scroll to week in tree with click on progress bar element
 function scrollToWeekElementInTree(event) {
     let progressBarWeekElementID = event.target.id;
@@ -41,6 +48,7 @@ function scrollToWeekElementInTree(event) {
     let weekContainer = document.getElementById(`weekContainer_${weekID}`);
     weekContainer.scrollIntoView({ behavior: "smooth" });
 }
+
 
 
 

@@ -2,8 +2,13 @@ function refreshWeekTree() {
     usersDatabase = retrieveUsersDatabase();
     clearWeekTree();
     createWeeks(usersDatabase);
-    populateWeekTreeWithContent(usersDatabase[document.getElementById("username").innerText]["data"]);
+    populateWeekTreeWithContent(usersDatabase[currentUserName]["data"]);
 }
+
+
+
+
+
 
 function clearWeekTree() {
     user = document.getElementById("username").innerText;
@@ -14,9 +19,14 @@ function clearWeekTree() {
         try {
             parent.removeChild(parent.firstChild);
         } catch {}
-    };
-
+    }
 }
+
+
+
+
+
+
 
 function createWeeks(usersDatabase) {
     user = document.getElementById("username").innerText;

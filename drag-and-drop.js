@@ -81,8 +81,9 @@ function dragDrop(event) {
     }
 
     event.target.classList.remove('over');
-    saveUsersDatabase(usersDatabase)
-    calculateScoresForProgressBar()
+    saveUsersDatabase(usersDatabase);
+    refreshWeekTree();
+    calculateScoresForProgressBar();
 }
 
 

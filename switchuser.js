@@ -4,5 +4,5 @@ function makeSwitchUserButtonClickable() {
 };
 
 function goToUserHTML(event) {
-    location.href = "index.html";
+    location.href = "login.html";
 }
