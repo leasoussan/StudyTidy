@@ -16,11 +16,25 @@ body {
     margin-top: 100px;
 }
 
+#userdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
 .slogan{
     margin-top: 90px;
     background-color: #ccf2ff;
     padding: 30px;
 }
+
+#registerButton {
+    margin: auto;
+    margin-top: 30px;
+}
+
 
 @media only screen and (max-width: 500px) {
     #myform {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTidy - Log in</title>
+   
+    <link rel="stylesheet" href="userStyles.css">
+</head>
+
+<body>
+    <div id="userdiv">
+        <form id="registerPage_myform">
+            <div class="registerPageHeader">
+                <h2>New User:</h2>
+            </div>
+            <div class="registerPage_inputArea">
+                <input id="username" type="text" name="username" placeholder="name"><br>
+                <input id="password" type="password" name="password" placeholder="password"><br>
+                <input id="weekNumber" type="number" name="weeks" placeholder="length of program in weeks"><br>
+            </div>
+            <div class="registerPage_buttonsArea">
+                <div class="registerPageButton">
+                    <button onclick="registerNewUser(event)" id="registerButton" type="submit">Register</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="usersDatabaseFunctions.js"></script>
+    <script src="registerPage.js"></script>
+</body>
+
+</html>
